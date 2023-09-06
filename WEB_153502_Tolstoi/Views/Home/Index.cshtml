@@ -1,0 +1,73 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Student's book number"] = 15350134;
+    ViewBag.Title = "Index";
+}
+
+<main class="container">
+    <h1>Лабораторная работа 1</h1>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+            <ol type="A">
+                <li>Элемент 1 списка</li>
+                <li>Элемент 2 списка</li>
+            </ol>
+        </li>
+        <li class="list-group-item">
+            <h1>Форма</h1>
+            <form method="post">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                        <div class="form-check">
+                            <input class="form-check-input" name="checkbox1" type="checkbox" id="checkbox1">
+                            <label class="form-check-label" for="checkbox1">
+                                Чек-бокс 1
+                            </label>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <div class="form-check">
+                            <input class="form-check-input" name="checkbox2" type="checkbox" id="checkbox2">
+                            <label class="form-check-label" for="checkbox2">
+                                Чек-бокс 2
+                            </label>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="Radio" id="radio1" checked>
+                            <label class="form-check-label" for="radio1">
+                                Радио-1
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="Radio" id="radio2">
+                            <label class="form-check-label" for="radio2">
+                                Радио-2
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="Radio" id="radio3">
+                            <label class="form-check-label" for="radio3">
+                                Радио-3
+                            </label>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <div class="mb-3">
+                            <label for="inputLogin" class="form-label">Логин:</label>
+                            <input type="text" name="inputLogin" class="form-control" id="inputLogin">
+                        </div>
+                        <div class="mb-3">
+                            <label for="inputPassword" class="form-label">Пароль</label>
+                            <input type="password" name="inputPassword" class="form-control" id="inputPassword">
+                        </div>
+                    </li>
+                </ul>
+                <button type="submit" class="btn btn-primary" href="/check">Отправить</button>
+            </form>
+        </li>
+    </ul>
+</main>
