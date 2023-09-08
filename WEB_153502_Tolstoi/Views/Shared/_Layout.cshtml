@@ -22,19 +22,19 @@
                             @ViewData["student's book number"]
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="/">Лб1</a>
+                            <a class="nav-link active" aria-current="page" asp-controller="Home" asp-action="Index">Лб1</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Каталог</a>
+                            <a class="nav-link" asp-controller="Product" asp-action="Index">Каталог</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Администрирование</a>
+                            <a class="nav-link" asp-area="Admin" asp-page="/Index">Администрирование</a>
                         </li>
                     </ul>
                 </div>
 
                 <!-- Информация пользователя -->
-                <a href="#" class="navbar-text ms-auto">
+                <a class="navbar-text ms-auto" asp-controller="Cart" asp-action="Index">
                     00,0 руб <i class="fa-solid fa-cart-shopping"></i> (0)
                 </a>
                 <div class="dropdown ms-4 nav-color">
@@ -55,7 +55,7 @@
                         <li><hr class="dropdown-divider"></li>
                         <li>
                             <form id="logoutForm" class="form-inline">
-                                <button id="logout" type="submit" class="nav-link btn btn-link text-dark">
+                                <button id="logout" type="submit" class="nav-link btn btn-link text-dark" asp-controller="Identify" asp-action="LogOut">
                                     Выйти из профиля
                                 </button>
                             </form>

@@ -1,24 +1,35 @@
-﻿@*
+﻿@using WEB_153502_Tolstoi.Models;
+
+@model IEnumerable<ListDemo>;
+
+@*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
     ViewData["Student's book number"] = 15350134;
-    ViewBag.Title = "Index";
 }
 
 <main class="container">
-    <h1>Лабораторная работа 1</h1>
+    <h1>@ViewData["Title"]</h1>
     <ul class="list-group list-group-flush">
         <li class="list-group-item">
             <ol type="A">
-                <li>Элемент 1 списка</li>
-                <li>Элемент 2 списка</li>
+                @for (var i = 1; i < 3; i++)
+                {
+                    <li>Элемент списка @i</li>
+                }
             </ol>
         </li>
         <li class="list-group-item">
             <h1>Форма</h1>
             <form method="post">
                 <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                        <div class="form-check">
+                            <input class="form-select" 
+
+                        </div>
+                    </li>
                     <li class="list-group-item">
                         <div class="form-check">
                             <input class="form-check-input" name="checkbox1" type="checkbox" id="checkbox1">
