@@ -1,6 +1,6 @@
 ﻿@using WEB_153502_Tolstoi.Models;
 
-@model IEnumerable<ListDemo>;
+@model SelectList;
 
 @*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -26,8 +26,7 @@
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">
                         <div class="form-check">
-                            <input class="form-select" 
-
+                            <select class="form-select" name="select" asp-items="Model"> </select>
                         </div>
                     </li>
                     <li class="list-group-item">
