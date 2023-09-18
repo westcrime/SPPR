@@ -1,7 +1,12 @@
+using WEB_153502_Tolstoi.Services.CategoryServices;
+using WEB_153502_Tolstoi.Services.GameService;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddScoped<ICategoryService, MemoryCategoryService>();
+builder.Services.AddScoped<IGameService, MemoryGameService>();
 
 var app = builder.Build();
 

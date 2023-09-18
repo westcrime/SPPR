@@ -1,0 +1,85 @@
+﻿@model Web_153502_Tolstoi.Domain.Models.ListModel<Web_153502_Tolstoi.Domain.Entities.Game>
+
+@{
+    var request = ViewContext.HttpContext.Request;
+    var returnUrl = request.Path + request.QueryString.ToUriComponent();
+    string? category = request.RouteValues["category"]?.ToString();
+    int prev = Model.CurrentPage == 1 ? 1 : Model.CurrentPage - 1;
+    int next = Model.CurrentPage == Model.TotalPages ? Model.TotalPages : Model.CurrentPage + 1;
+}
+
+<!-- выбор категории -->
+<div class="col-2 border-2">
+    <ul class="nav">
+        Фильтрация по категориям
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle"
+               data-bs-toggle="dropdown"
+               href="#"
+               role="button"
+               aria-expanded="false">
+                @ViewData["currentCategory"]
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                    <a class="dropdown-item"
+                       asp-controller="Game"
+                       asp-route-category=@null>Все</a>
+                </li>
+                @foreach (var item in ViewBag.Categories)
+                {
+                    <li>
+                        <a class="dropdown-item"
+                           asp-controller="Game"
+                           asp-route-category="@item.NormalizedName">
+                            @item.Name
+                        </a>
+                    </li>
+                }
+            </ul>
+        </li> 
+    </ul>
+</div>
+<!-- выбор категории -->
+
+<div class="container">
+    <div class="row row-cols-3 g-3">
+        @foreach (var item in Model.Items)
+        {
+            <div class="col">
+                <div class="card" style="width: 18rem">
+                    <img src="@item.Image" style="width: 200px; height: 200px" class="card-img-top" alt="pic-of-the-game">
+                    <div class="card-body">
+                        <h5 class="card-title">@item.Name</h5>
+                        <p class="card-text">@item.Description</p>
+                        <p class="card-text">Price: @item.Price $</p>
+                    </div>
+                    <div class="card-body">
+                        <a asp-action="Add" asp-route-id="@item.Id.ToString()" asp-route-returnurl="@returnUrl" asp-controller="Cart" class="btn btn-primary">Добавить в корзину</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+<div class="row-2">
+    <nav aria-label="Page navigation example">
+        <ul class="pagination">
+            <li class="page-item">
+                <a class="page-link @(Model.CurrentPage != 1 ? "" : "active")" asp-controller="Game" asp-action="Index" asp-route-category="@ViewData["currentCategory"]" asp-route-pageno="@prev" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                </a>
+            </li>
+            <li class="page-item @(Model.CurrentPage - 1 <= 0 ? "invisible" : "")"><a class="page-link" asp-action="Index" asp-route-category="@ViewData["currentCategory"]" asp-route-pageno="@prev">@prev</a></li>
+            <li class="page-item disabled"><a class="page-link">@Model.CurrentPage</a></li>
+            <li class="page-item @(Model.CurrentPage + 1 > Model.TotalPages ? "invisible" : "")"><a class="page-link" asp-action="Index" asp-route-category="@ViewData["currentCategory"]" asp-route-pageno="@next">@next</a></li>
+            <li class="page-item">
+                <a class="page-link @(Model.CurrentPage != Model.TotalPages ? "" : "active")" asp-controller="Game" asp-action="Index" asp-route-category="@ViewData["currentCategory"]" asp-route-pageno="@next" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+</div>

@@ -3267,6 +3267,16 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XDocument.dll": {}
         }
+      },
+      "Web_153502_Tolstoi.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/Web_153502_Tolstoi.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Web_153502_Tolstoi.Domain.dll": {}
+        }
       }
     }
   },
@@ -9536,11 +9546,17 @@
         "system.xml.xdocument.4.3.0.nupkg.sha512",
         "system.xml.xdocument.nuspec"
       ]
+    },
+    "Web_153502_Tolstoi.Domain/1.0.0": {
+      "type": "project",
+      "path": "../Web_153502_Tolstoi.Domain/Web_153502_Tolstoi.Domain.csproj",
+      "msbuildProject": "../Web_153502_Tolstoi.Domain/Web_153502_Tolstoi.Domain.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
-      "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 6.0.16"
+      "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 6.0.16",
+      "Web_153502_Tolstoi.Domain >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -9570,7 +9586,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\westcrime\\Documents\\SPPR\\Web_153502_Tolstoi.Domain\\Web_153502_Tolstoi.Domain.csproj": {
+              "projectPath": "C:\\Users\\westcrime\\Documents\\SPPR\\Web_153502_Tolstoi.Domain\\Web_153502_Tolstoi.Domain.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

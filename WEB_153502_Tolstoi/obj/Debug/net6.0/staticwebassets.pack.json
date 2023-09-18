@@ -13,6 +13,26 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\westcrime\\Documents\\SPPR\\WEB_153502_Tolstoi\\wwwroot\\images\\dota.jpg",
+      "PackagePath": "staticwebassets\\images\\dota.jpg"
+    },
+    {
+      "Id": "C:\\Users\\westcrime\\Documents\\SPPR\\WEB_153502_Tolstoi\\wwwroot\\images\\factorio.jpg",
+      "PackagePath": "staticwebassets\\images\\factorio.jpg"
+    },
+    {
+      "Id": "C:\\Users\\westcrime\\Documents\\SPPR\\WEB_153502_Tolstoi\\wwwroot\\images\\fifa23.jpg",
+      "PackagePath": "staticwebassets\\images\\fifa23.jpg"
+    },
+    {
+      "Id": "C:\\Users\\westcrime\\Documents\\SPPR\\WEB_153502_Tolstoi\\wwwroot\\images\\fs23.jpg",
+      "PackagePath": "staticwebassets\\images\\fs23.jpg"
+    },
+    {
+      "Id": "C:\\Users\\westcrime\\Documents\\SPPR\\WEB_153502_Tolstoi\\wwwroot\\images\\starcraft2.jpg",
+      "PackagePath": "staticwebassets\\images\\starcraft2.jpg"
+    },
+    {
       "Id": "C:\\Users\\westcrime\\Documents\\SPPR\\WEB_153502_Tolstoi\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
