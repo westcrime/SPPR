@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Web_153502_Tolstoi.API.props" />
+</Project>

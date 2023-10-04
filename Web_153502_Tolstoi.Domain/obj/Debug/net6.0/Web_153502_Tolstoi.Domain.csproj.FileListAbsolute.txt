@@ -9,3 +9,6 @@ C:\Users\westcrime\Documents\SPPR\Web_153502_Tolstoi.Domain\obj\Debug\net6.0\Web
 C:\Users\westcrime\Documents\SPPR\Web_153502_Tolstoi.Domain\obj\Debug\net6.0\refint\Web_153502_Tolstoi.Domain.dll
 C:\Users\westcrime\Documents\SPPR\Web_153502_Tolstoi.Domain\obj\Debug\net6.0\Web_153502_Tolstoi.Domain.pdb
 C:\Users\westcrime\Documents\SPPR\Web_153502_Tolstoi.Domain\obj\Debug\net6.0\ref\Web_153502_Tolstoi.Domain.dll
+C:\Users\westcrime\Documents\SPPR\Web_153502_Tolstoi.Domain\bin\Debug\net6.0\Web_153502_Tolstoi.Domain.runtimeconfig.json
+C:\Users\westcrime\Documents\SPPR\Web_153502_Tolstoi.Domain\obj\Debug\net6.0\Web_153502_Tolstoi.Domain.csproj.AssemblyReference.cache
+C:\Users\westcrime\Documents\SPPR\Web_153502_Tolstoi.Domain\obj\Debug\net6.0\Web_153502_Tolstoi.Domain.genruntimeconfig.cache

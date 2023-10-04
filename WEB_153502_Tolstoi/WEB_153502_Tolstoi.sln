@@ -5,7 +5,9 @@ VisualStudioVersion = 17.7.34024.191
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WEB_153502_Tolstoi", "WEB_153502_Tolstoi.csproj", "{37648655-682B-490A-BFBD-AE1950723C49}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web_153502_Tolstoi.Domain", "..\Web_153502_Tolstoi.Domain\Web_153502_Tolstoi.Domain.csproj", "{F020AD04-2FDC-4354-A4DE-CA6DBE3D7D95}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Web_153502_Tolstoi.Domain", "..\Web_153502_Tolstoi.Domain\Web_153502_Tolstoi.Domain.csproj", "{F020AD04-2FDC-4354-A4DE-CA6DBE3D7D95}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web_153502_Tolstoi.API", "..\Web_153502_Tolstoi.API\Web_153502_Tolstoi.API.csproj", "{28161391-40F5-4ADB-A22C-B854E6B76B5B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{F020AD04-2FDC-4354-A4DE-CA6DBE3D7D95}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F020AD04-2FDC-4354-A4DE-CA6DBE3D7D95}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F020AD04-2FDC-4354-A4DE-CA6DBE3D7D95}.Release|Any CPU.Build.0 = Release|Any CPU
+		{28161391-40F5-4ADB-A22C-B854E6B76B5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28161391-40F5-4ADB-A22C-B854E6B76B5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28161391-40F5-4ADB-A22C-B854E6B76B5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28161391-40F5-4ADB-A22C-B854E6B76B5B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

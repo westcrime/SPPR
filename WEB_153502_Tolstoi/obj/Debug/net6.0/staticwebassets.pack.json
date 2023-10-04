@@ -5,32 +5,32 @@
       "PackagePath": "staticwebassets\\WEB_153502_Tolstoi.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\westcrime\\Documents\\SPPR\\WEB_153502_Tolstoi\\wwwroot\\Images\\dota.jpg",
+      "PackagePath": "staticwebassets\\Images\\dota.jpg"
+    },
+    {
+      "Id": "C:\\Users\\westcrime\\Documents\\SPPR\\WEB_153502_Tolstoi\\wwwroot\\Images\\factorio.jpg",
+      "PackagePath": "staticwebassets\\Images\\factorio.jpg"
+    },
+    {
+      "Id": "C:\\Users\\westcrime\\Documents\\SPPR\\WEB_153502_Tolstoi\\wwwroot\\Images\\fifa23.jpg",
+      "PackagePath": "staticwebassets\\Images\\fifa23.jpg"
+    },
+    {
+      "Id": "C:\\Users\\westcrime\\Documents\\SPPR\\WEB_153502_Tolstoi\\wwwroot\\Images\\fs23.jpg",
+      "PackagePath": "staticwebassets\\Images\\fs23.jpg"
+    },
+    {
+      "Id": "C:\\Users\\westcrime\\Documents\\SPPR\\WEB_153502_Tolstoi\\wwwroot\\Images\\starcraft2.jpg",
+      "PackagePath": "staticwebassets\\Images\\starcraft2.jpg"
+    },
+    {
       "Id": "C:\\Users\\westcrime\\Documents\\SPPR\\WEB_153502_Tolstoi\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
       "Id": "C:\\Users\\westcrime\\Documents\\SPPR\\WEB_153502_Tolstoi\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
-    },
-    {
-      "Id": "C:\\Users\\westcrime\\Documents\\SPPR\\WEB_153502_Tolstoi\\wwwroot\\images\\dota.jpg",
-      "PackagePath": "staticwebassets\\images\\dota.jpg"
-    },
-    {
-      "Id": "C:\\Users\\westcrime\\Documents\\SPPR\\WEB_153502_Tolstoi\\wwwroot\\images\\factorio.jpg",
-      "PackagePath": "staticwebassets\\images\\factorio.jpg"
-    },
-    {
-      "Id": "C:\\Users\\westcrime\\Documents\\SPPR\\WEB_153502_Tolstoi\\wwwroot\\images\\fifa23.jpg",
-      "PackagePath": "staticwebassets\\images\\fifa23.jpg"
-    },
-    {
-      "Id": "C:\\Users\\westcrime\\Documents\\SPPR\\WEB_153502_Tolstoi\\wwwroot\\images\\fs23.jpg",
-      "PackagePath": "staticwebassets\\images\\fs23.jpg"
-    },
-    {
-      "Id": "C:\\Users\\westcrime\\Documents\\SPPR\\WEB_153502_Tolstoi\\wwwroot\\images\\starcraft2.jpg",
-      "PackagePath": "staticwebassets\\images\\starcraft2.jpg"
     },
     {
       "Id": "C:\\Users\\westcrime\\Documents\\SPPR\\WEB_153502_Tolstoi\\wwwroot\\js\\site.js",
