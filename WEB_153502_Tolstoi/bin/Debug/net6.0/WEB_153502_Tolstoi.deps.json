@@ -9,6 +9,7 @@
       "WEB_153502_Tolstoi/1.0.0": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "7.0.11",
+          "Microsoft.EntityFrameworkCore.SqlServer": "6.0.23",
           "Microsoft.EntityFrameworkCore.Sqlite": "7.0.11",
           "Microsoft.EntityFrameworkCore.Sqlite.Core": "7.0.11",
           "Microsoft.EntityFrameworkCore.Tools": "7.0.11",
@@ -1208,15 +1209,15 @@
           }
         }
       },
-      "Microsoft.EntityFrameworkCore.SqlServer/6.0.21": {
+      "Microsoft.EntityFrameworkCore.SqlServer/6.0.23": {
         "dependencies": {
           "Microsoft.Data.SqlClient": "2.1.4",
           "Microsoft.EntityFrameworkCore.Relational": "7.0.11"
         },
         "runtime": {
           "lib/net6.0/Microsoft.EntityFrameworkCore.SqlServer.dll": {
-            "assemblyVersion": "6.0.21.0",
-            "fileVersion": "6.0.2123.36206"
+            "assemblyVersion": "6.0.23.0",
+            "fileVersion": "6.0.2323.47715"
           }
         }
       },
@@ -2811,7 +2812,7 @@
       "Web_153502_Tolstoi.API/1.0.0": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "7.0.11",
-          "Microsoft.EntityFrameworkCore.SqlServer": "6.0.21",
+          "Microsoft.EntityFrameworkCore.SqlServer": "6.0.23",
           "Microsoft.EntityFrameworkCore.Sqlite": "7.0.11",
           "Microsoft.EntityFrameworkCore.Sqlite.Core": "7.0.11",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "6.0.16",
@@ -3402,12 +3403,12 @@
       "path": "microsoft.entityframeworkcore.sqlite.core/7.0.11",
       "hashPath": "microsoft.entityframeworkcore.sqlite.core.7.0.11.nupkg.sha512"
     },
-    "Microsoft.EntityFrameworkCore.SqlServer/6.0.21": {
+    "Microsoft.EntityFrameworkCore.SqlServer/6.0.23": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-csFkL9F/pk3od2p6I9OxlnYmKGM0kmWoJx2GOQbAgvmq8QT41MUZKETVAewAKmGiI7lg10jc4KTb/IaLr7rN+w==",
-      "path": "microsoft.entityframeworkcore.sqlserver/6.0.21",
-      "hashPath": "microsoft.entityframeworkcore.sqlserver.6.0.21.nupkg.sha512"
+      "sha512": "sha512-6ajE6SC+5zSjvadvZGeehbzmyf/zIirClCrer4y7hL7lq4K0jg/CZS8I2V2afC01Misb7n7owSM+XWqOb9eT3Q==",
+      "path": "microsoft.entityframeworkcore.sqlserver/6.0.23",
+      "hashPath": "microsoft.entityframeworkcore.sqlserver.6.0.23.nupkg.sha512"
     },
     "Microsoft.EntityFrameworkCore.Tools/7.0.11": {
       "type": "package",

@@ -9,45 +9,65 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = WEB_153502_Tolstoi
 build_property.RootNamespace = WEB_153502_Tolstoi
-build_property.ProjectDir = C:\Users\westcrime\Documents\SPPR\WEB_153502_Tolstoi\
+build_property.ProjectDir = C:\bsuir\SPPR\WEB_153502_Tolstoi\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\westcrime\Documents\SPPR\WEB_153502_Tolstoi
+build_property.MSBuildProjectDirectory = C:\bsuir\SPPR\WEB_153502_Tolstoi
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/westcrime/Documents/SPPR/WEB_153502_Tolstoi/Views/Game/Index.cshtml]
+[C:/bsuir/SPPR/WEB_153502_Tolstoi/Views/Admin/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/bsuir/SPPR/WEB_153502_Tolstoi/Views/Admin/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/bsuir/SPPR/WEB_153502_Tolstoi/Views/Admin/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/bsuir/SPPR/WEB_153502_Tolstoi/Views/Admin/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/bsuir/SPPR/WEB_153502_Tolstoi/Views/Admin/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/bsuir/SPPR/WEB_153502_Tolstoi/Views/Game/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2FtZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/westcrime/Documents/SPPR/WEB_153502_Tolstoi/Views/Home/Index.cshtml]
+[C:/bsuir/SPPR/WEB_153502_Tolstoi/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/westcrime/Documents/SPPR/WEB_153502_Tolstoi/Views/Shared/Error.cshtml]
+[C:/bsuir/SPPR/WEB_153502_Tolstoi/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/westcrime/Documents/SPPR/WEB_153502_Tolstoi/Views/Shared/_MenuPartial.cshtml]
+[C:/bsuir/SPPR/WEB_153502_Tolstoi/Views/Shared/_MenuPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9NZW51UGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/westcrime/Documents/SPPR/WEB_153502_Tolstoi/Views/Shared/_UserInfoPartial.cshtml]
+[C:/bsuir/SPPR/WEB_153502_Tolstoi/Views/Shared/_UserInfoPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Vc2VySW5mb1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/westcrime/Documents/SPPR/WEB_153502_Tolstoi/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/bsuir/SPPR/WEB_153502_Tolstoi/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/westcrime/Documents/SPPR/WEB_153502_Tolstoi/Views/_ViewImports.cshtml]
+[C:/bsuir/SPPR/WEB_153502_Tolstoi/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/westcrime/Documents/SPPR/WEB_153502_Tolstoi/Views/_ViewStart.cshtml]
+[C:/bsuir/SPPR/WEB_153502_Tolstoi/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/westcrime/Documents/SPPR/WEB_153502_Tolstoi/Views/Shared/_Layout.cshtml]
+[C:/bsuir/SPPR/WEB_153502_Tolstoi/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-esxatgw0xq

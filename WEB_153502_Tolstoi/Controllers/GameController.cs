@@ -1,8 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Web_153502_Tolstoi.API.Services;
 using Web_153502_Tolstoi.Domain.Entities;
 using Web_153502_Tolstoi.Domain.Models;
-using WEB_153502_Tolstoi.Services.CategoryServices;
-using WEB_153502_Tolstoi.Services.GameService;
 
 namespace WEB_153502_Tolstoi.Controllers
 {

@@ -15,12 +15,12 @@ namespace Web_153502_Tolstoi.API.Services
             _context = context;
         }
 
-        public Task<ResponseData<Game>> CreateProductAsync(Game product)
+        public Task<ResponseData<Game>> CreateGameAsync(Game Game)
         {
             throw new NotImplementedException();
         }
 
-        public Task DeleteProductAsync(int id)
+        public Task DeleteGameAsync(int id)
         {
             throw new NotImplementedException();
         }
@@ -89,7 +89,7 @@ namespace Web_153502_Tolstoi.API.Services
             }
         }
 
-        public Task<ResponseData<Game>> GetProductByIdAsync(int id)
+        public Task<ResponseData<Game>> GetGameByIdAsync(int id)
         {
             throw new NotImplementedException();
         }
@@ -99,7 +99,7 @@ namespace Web_153502_Tolstoi.API.Services
             throw new NotImplementedException();
         }
 
-        public Task UpdateProductAsync(int id, Game product)
+        public Task UpdateGameAsync(int id, Game Game)
         {
             throw new NotImplementedException();
         }

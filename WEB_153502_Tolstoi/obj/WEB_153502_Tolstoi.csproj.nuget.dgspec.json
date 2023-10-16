@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\westcrime\\Documents\\SPPR\\WEB_153502_Tolstoi\\WEB_153502_Tolstoi.csproj": {}
+    "C:\\bsuir\\SPPR\\WEB_153502_Tolstoi\\WEB_153502_Tolstoi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\westcrime\\Documents\\SPPR\\Web_153502_Tolstoi.API\\Web_153502_Tolstoi.API.csproj": {
+    "C:\\bsuir\\SPPR\\Web_153502_Tolstoi.API\\Web_153502_Tolstoi.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\westcrime\\Documents\\SPPR\\Web_153502_Tolstoi.API\\Web_153502_Tolstoi.API.csproj",
+        "projectUniqueName": "C:\\bsuir\\SPPR\\Web_153502_Tolstoi.API\\Web_153502_Tolstoi.API.csproj",
         "projectName": "Web_153502_Tolstoi.API",
-        "projectPath": "C:\\Users\\westcrime\\Documents\\SPPR\\Web_153502_Tolstoi.API\\Web_153502_Tolstoi.API.csproj",
-        "packagesPath": "C:\\Users\\westcrime\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\westcrime\\Documents\\SPPR\\Web_153502_Tolstoi.API\\obj\\",
+        "projectPath": "C:\\bsuir\\SPPR\\Web_153502_Tolstoi.API\\Web_153502_Tolstoi.API.csproj",
+        "packagesPath": "C:\\Users\\dmitriy\\.nuget\\packages\\",
+        "outputPath": "C:\\bsuir\\SPPR\\Web_153502_Tolstoi.API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\westcrime\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\dmitriy\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,15 +22,14 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\westcrime\\Documents\\SPPR\\Web_153502_Tolstoi.Domain\\Web_153502_Tolstoi.Domain.csproj": {
-                "projectPath": "C:\\Users\\westcrime\\Documents\\SPPR\\Web_153502_Tolstoi.Domain\\Web_153502_Tolstoi.Domain.csproj"
+              "C:\\bsuir\\SPPR\\Web_153502_Tolstoi.Domain\\Web_153502_Tolstoi.Domain.csproj": {
+                "projectPath": "C:\\bsuir\\SPPR\\Web_153502_Tolstoi.Domain\\Web_153502_Tolstoi.Domain.csproj"
               }
             }
           }
@@ -109,17 +108,17 @@
         }
       }
     },
-    "C:\\Users\\westcrime\\Documents\\SPPR\\Web_153502_Tolstoi.Domain\\Web_153502_Tolstoi.Domain.csproj": {
+    "C:\\bsuir\\SPPR\\Web_153502_Tolstoi.Domain\\Web_153502_Tolstoi.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\westcrime\\Documents\\SPPR\\Web_153502_Tolstoi.Domain\\Web_153502_Tolstoi.Domain.csproj",
+        "projectUniqueName": "C:\\bsuir\\SPPR\\Web_153502_Tolstoi.Domain\\Web_153502_Tolstoi.Domain.csproj",
         "projectName": "Web_153502_Tolstoi.Domain",
-        "projectPath": "C:\\Users\\westcrime\\Documents\\SPPR\\Web_153502_Tolstoi.Domain\\Web_153502_Tolstoi.Domain.csproj",
-        "packagesPath": "C:\\Users\\westcrime\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\westcrime\\Documents\\SPPR\\Web_153502_Tolstoi.Domain\\obj\\",
+        "projectPath": "C:\\bsuir\\SPPR\\Web_153502_Tolstoi.Domain\\Web_153502_Tolstoi.Domain.csproj",
+        "packagesPath": "C:\\Users\\dmitriy\\.nuget\\packages\\",
+        "outputPath": "C:\\bsuir\\SPPR\\Web_153502_Tolstoi.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\westcrime\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\dmitriy\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -127,7 +126,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -189,17 +187,17 @@
         }
       }
     },
-    "C:\\Users\\westcrime\\Documents\\SPPR\\WEB_153502_Tolstoi\\WEB_153502_Tolstoi.csproj": {
+    "C:\\bsuir\\SPPR\\WEB_153502_Tolstoi\\WEB_153502_Tolstoi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\westcrime\\Documents\\SPPR\\WEB_153502_Tolstoi\\WEB_153502_Tolstoi.csproj",
+        "projectUniqueName": "C:\\bsuir\\SPPR\\WEB_153502_Tolstoi\\WEB_153502_Tolstoi.csproj",
         "projectName": "WEB_153502_Tolstoi",
-        "projectPath": "C:\\Users\\westcrime\\Documents\\SPPR\\WEB_153502_Tolstoi\\WEB_153502_Tolstoi.csproj",
-        "packagesPath": "C:\\Users\\westcrime\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\westcrime\\Documents\\SPPR\\WEB_153502_Tolstoi\\obj\\",
+        "projectPath": "C:\\bsuir\\SPPR\\WEB_153502_Tolstoi\\WEB_153502_Tolstoi.csproj",
+        "packagesPath": "C:\\Users\\dmitriy\\.nuget\\packages\\",
+        "outputPath": "C:\\bsuir\\SPPR\\WEB_153502_Tolstoi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\westcrime\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\dmitriy\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -207,18 +205,17 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\westcrime\\Documents\\SPPR\\Web_153502_Tolstoi.API\\Web_153502_Tolstoi.API.csproj": {
-                "projectPath": "C:\\Users\\westcrime\\Documents\\SPPR\\Web_153502_Tolstoi.API\\Web_153502_Tolstoi.API.csproj"
+              "C:\\bsuir\\SPPR\\Web_153502_Tolstoi.API\\Web_153502_Tolstoi.API.csproj": {
+                "projectPath": "C:\\bsuir\\SPPR\\Web_153502_Tolstoi.API\\Web_153502_Tolstoi.API.csproj"
               },
-              "C:\\Users\\westcrime\\Documents\\SPPR\\Web_153502_Tolstoi.Domain\\Web_153502_Tolstoi.Domain.csproj": {
-                "projectPath": "C:\\Users\\westcrime\\Documents\\SPPR\\Web_153502_Tolstoi.Domain\\Web_153502_Tolstoi.Domain.csproj"
+              "C:\\bsuir\\SPPR\\Web_153502_Tolstoi.Domain\\Web_153502_Tolstoi.Domain.csproj": {
+                "projectPath": "C:\\bsuir\\SPPR\\Web_153502_Tolstoi.Domain\\Web_153502_Tolstoi.Domain.csproj"
               }
             }
           }
@@ -236,6 +233,10 @@
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[7.0.11, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[6.0.23, )"
             },
             "Microsoft.EntityFrameworkCore.Sqlite": {
               "target": "Package",

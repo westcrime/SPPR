@@ -12,3 +12,17 @@ C:\Users\westcrime\Documents\SPPR\Web_153502_Tolstoi.Domain\obj\Debug\net6.0\ref
 C:\Users\westcrime\Documents\SPPR\Web_153502_Tolstoi.Domain\bin\Debug\net6.0\Web_153502_Tolstoi.Domain.runtimeconfig.json
 C:\Users\westcrime\Documents\SPPR\Web_153502_Tolstoi.Domain\obj\Debug\net6.0\Web_153502_Tolstoi.Domain.csproj.AssemblyReference.cache
 C:\Users\westcrime\Documents\SPPR\Web_153502_Tolstoi.Domain\obj\Debug\net6.0\Web_153502_Tolstoi.Domain.genruntimeconfig.cache
+C:\bsuir\SPPR\Web_153502_Tolstoi.Domain\bin\Debug\net6.0\Web_153502_Tolstoi.Domain.deps.json
+C:\bsuir\SPPR\Web_153502_Tolstoi.Domain\bin\Debug\net6.0\Web_153502_Tolstoi.Domain.runtimeconfig.json
+C:\bsuir\SPPR\Web_153502_Tolstoi.Domain\bin\Debug\net6.0\Web_153502_Tolstoi.Domain.dll
+C:\bsuir\SPPR\Web_153502_Tolstoi.Domain\bin\Debug\net6.0\Web_153502_Tolstoi.Domain.pdb
+C:\bsuir\SPPR\Web_153502_Tolstoi.Domain\obj\Debug\net6.0\Web_153502_Tolstoi.Domain.csproj.AssemblyReference.cache
+C:\bsuir\SPPR\Web_153502_Tolstoi.Domain\obj\Debug\net6.0\Web_153502_Tolstoi.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\bsuir\SPPR\Web_153502_Tolstoi.Domain\obj\Debug\net6.0\Web_153502_Tolstoi.Domain.AssemblyInfoInputs.cache
+C:\bsuir\SPPR\Web_153502_Tolstoi.Domain\obj\Debug\net6.0\Web_153502_Tolstoi.Domain.AssemblyInfo.cs
+C:\bsuir\SPPR\Web_153502_Tolstoi.Domain\obj\Debug\net6.0\Web_153502_Tolstoi.Domain.csproj.CoreCompileInputs.cache
+C:\bsuir\SPPR\Web_153502_Tolstoi.Domain\obj\Debug\net6.0\Web_153502_Tolstoi.Domain.dll
+C:\bsuir\SPPR\Web_153502_Tolstoi.Domain\obj\Debug\net6.0\refint\Web_153502_Tolstoi.Domain.dll
+C:\bsuir\SPPR\Web_153502_Tolstoi.Domain\obj\Debug\net6.0\Web_153502_Tolstoi.Domain.pdb
+C:\bsuir\SPPR\Web_153502_Tolstoi.Domain\obj\Debug\net6.0\Web_153502_Tolstoi.Domain.genruntimeconfig.cache
+C:\bsuir\SPPR\Web_153502_Tolstoi.Domain\obj\Debug\net6.0\ref\Web_153502_Tolstoi.Domain.dll

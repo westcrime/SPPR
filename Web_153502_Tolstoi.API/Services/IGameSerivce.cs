@@ -18,26 +18,26 @@ namespace Web_153502_Tolstoi.API.Services
         /// </summary>
         /// <param name="id">Идентификатор объекта</param>
         /// <returns></returns>
-        public Task<ResponseData<Game>> GetProductByIdAsync(int id);
+        public Task<ResponseData<Game>> GetGameByIdAsync(int id);
         /// <summary>
         /// Обновление объекта
         /// </summary>
         /// <param name="id">Id изменяемомго объекта</param>
-        /// <param name="product">объект с новыми параметрами</param>
+        /// <param name="Game">объект с новыми параметрами</param>
         /// <returns></returns>
-        public Task UpdateProductAsync(int id, Game product);
+        public Task UpdateGameAsync(int id, Game Game);
         /// <summary>
         /// Удаление объекта
         /// </summary>
         /// <param name="id">Id удаляемомго объекта</param>
         /// <returns></returns>
-        public Task DeleteProductAsync(int id);
+        public Task DeleteGameAsync(int id);
         /// <summary>
         /// Создание объекта
         /// </summary>
-        /// <param name="product">Новый объект</param>
+        /// <param name="Game">Новый объект</param>
         /// <returns>Созданный объект</returns>
-        public Task<ResponseData<Game>> CreateProductAsync(Game product);
+        public Task<ResponseData<Game>> CreateGameAsync(Game Game);
         /// <summary>
         /// Сохранить файл изображения для объекта
         /// </summary>

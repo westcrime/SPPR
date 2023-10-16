@@ -2,10 +2,10 @@
 using System.Net.Http;
 using System.Text;
 using System.Text.Json;
+using Web_153502_Tolstoi.API.Services;
 using Web_153502_Tolstoi.Domain.Entities;
 using Web_153502_Tolstoi.Domain.Models;
 using WEB_153502_Tolstoi.Services.ApiData;
-using WEB_153502_Tolstoi.Services.GameService;
 
 namespace WEB_153502_Tolstoi.Services.Api.Services
 {
@@ -29,24 +29,24 @@ namespace WEB_153502_Tolstoi.Services.Api.Services
             _logger = logger;
         }
 
-        public async Task<ResponseData<Game>> CreateProductAsync(Game product, IFormFile? formFile)
+        public async Task<ResponseData<Game>> CreateGameAsync(Game game)
         {
-            var uri = new Uri(_httpClient.BaseAddress.AbsoluteUri + "Dishes");
-            var response = await _httpClient.PostAsJsonAsync(uri, product, _serializerOptions);
+            var uri = new Uri(_httpClient.BaseAddress.AbsoluteUri + "Games");
+            var response = await _httpClient.PostAsJsonAsync(uri, game, _serializerOptions);
             if (response.IsSuccessStatusCode)
             {
                 var data = await response.Content.ReadFromJsonAsync<ResponseData<Game>>(_serializerOptions);
                 return data; // game;
             }
-            _logger.LogError($"-----> object not created. Error{ response.StatusCode.ToString()}");
+            _logger.LogError($"-----> object not created. Error{response.StatusCode.ToString()}");
             return new ResponseData<Game>
             {
                 Success = false,
-                ErrorMessage = $"Объект не добавлен. Error:{ response.StatusCode.ToString() }"
+                ErrorMessage = $"Объект не добавлен. Error:{response.StatusCode.ToString()}"
             };
         }
 
-        public Task DeleteProductAsync(int id)
+        public Task DeleteGameAsync(int id)
         {
             throw new NotImplementedException();
         }
@@ -56,7 +56,7 @@ namespace WEB_153502_Tolstoi.Services.Api.Services
             throw new NotImplementedException();
         }
 
-        public async Task<ResponseData<ListModel<Game>>> GetGameListAsync(string? categoryNormalizedName = null, int pageNo = 1)
+        public async Task<ResponseData<ListModel<Game>>> GetGameListAsync(string? categoryNormalizedName = null, int pageNo = 1, int pageSize = 3)
         {
             // подготовка URL запроса
             var urlString = new StringBuilder($"{_httpClient.BaseAddress.AbsoluteUri}Games/");
@@ -73,7 +73,7 @@ namespace WEB_153502_Tolstoi.Services.Api.Services
             // добавить размер страницы в строку запроса
             if (!_pageSize.Equals("3"))
             {
-                urlString.Append(QueryString.Create("pageSize", _pageSize));
+                urlString.Append(QueryString.Create("pageSize", pageSize.ToString()));
             }
             // отправить запрос к API
             var response = await _httpClient.GetAsync(new Uri(urlString.ToString()));
@@ -101,7 +101,12 @@ namespace WEB_153502_Tolstoi.Services.Api.Services
             };
         }
 
-        public Task UpdateGameAsync(int id, Game game, IFormFile? formFile)
+        public Task<ResponseData<string>> SaveImageAsync(int id, IFormFile formFile)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task UpdateGameAsync(int id, Game Game)
         {
             throw new NotImplementedException();
         }

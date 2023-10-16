@@ -52,98 +52,97 @@ namespace Web_153502_Tolstoi.API.Controllers
             return Ok(await _gameService.GetGameListAsync(null, pageNo, pageSize));
         }
 
-        //// GET: api/Games/5
-        //[HttpGet("{id}")]
-        //public async Task<ActionResult<Game>> GetGame(int id)
-        //{
-        //    //if (_context.Games == null)
-        //    //{
-        //    //    return NotFound();
-        //    //}
-        //    //  var game = await _context.Games.FindAsync(id);
+        // GET: api/Games/5
+        [HttpGet("{id}")]
+        public async Task<ActionResult<Game>> GetGame(int id)
+        {
+            var games = (await _gameService.GetGameListAsync(null)).Data.Items;
+            if (games == null)
+            {
+                return NotFound();
+            }
+            var game = (games.FirstOrDefault(m => m.Id == id));
 
-        //    //  if (game == null)
-        //    //  {
-        //    //      return NotFound();
-        //    //  }
+            if (game == null)
+            {
+                return NotFound();
+            }
 
-        //    //  return game;
-        //    throw new NotImplementedException();
-        //}
+            return game;
+        }
 
-        //// PUT: api/Games/5
-        //// To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        //[HttpPut("{id}")]
-        //public async Task<IActionResult> PutGame(int id, Game game)
-        //{
-        //    //if (id != game.Id)
-        //    //{
-        //    //    return BadRequest();
-        //    //}
+        // PUT: api/Games/5
+        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        [HttpPut("{id}")]
+        public async Task<IActionResult> PutGame(int id, Game game)
+        {
+            if (id != game.Id)
+            {
+                return BadRequest();
+            }
 
-        //    //_context.Entry(game).State = EntityState.Modified;
+            //_gameService.Entry(game).State = EntityState.Modified;
 
-        //    //try
-        //    //{
-        //    //    await _context.SaveChangesAsync();
-        //    //}
-        //    //catch (DbUpdateConcurrencyException)
-        //    //{
-        //    //    if (!GameExists(id))
-        //    //    {
-        //    //        return NotFound();
-        //    //    }
-        //    //    else
-        //    //    {
-        //    //        throw;
-        //    //    }
-        //    //}
+            try
+            {
+                //await _gameService.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!GameExists(id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
 
-        //    //return NoContent();
-        //    throw new NotImplementedException();
-        //}
+            return NoContent();
+        }
 
-        //// POST: api/Games
-        //// To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        //[HttpPost]
-        //public async Task<ActionResult<Game>> PostGame(Game game)
-        //{
-        //    //if (_context.Games == null)
-        //    //{
-        //    //    return Problem("Entity set 'AppDbContext.Games'  is null.");
-        //    //}
-        //    //  _context.Games.Add(game);
-        //    //  await _context.SaveChangesAsync();
+        // POST: api/Games
+        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        [HttpPost]
+        public async Task<ActionResult<Game>> PostGame(Game game)
+        {
+            //if (_gameService.Games == null)
+            //{
+            //    return Problem("Entity set 'AppDbContext.Games'  is null.");
+            //}
+            //  _gameService.Games.Add(game);
+            //  await _gameService.SaveChangesAsync();
 
-        //    //  return CreatedAtAction("GetGame", new { id = game.Id }, game);
-        //    throw new NotImplementedException();
-        //}
+            //  return CreatedAtAction("GetGame", new { id = game.Id }, game);
+            throw new NotImplementedException();
+        }
 
-        //// DELETE: api/Games/5
-        //[HttpDelete("{id}")]
-        //public async Task<IActionResult> DeleteGame(int id)
-        //{
-        //    //if (_context.Games == null)
-        //    //{
-        //    //    return NotFound();
-        //    //}
-        //    //var game = await _context.Games.FindAsync(id);
-        //    //if (game == null)
-        //    //{
-        //    //    return NotFound();
-        //    //}
+        // DELETE: api/Games/5
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteGame(int id)
+        {
+            //if (_gameService.Games == null)
+            //{
+            //    return NotFound();
+            //}
+            //var game = await _gameService.Games.FindAsync(id);
+            //if (game == null)
+            //{
+            //    return NotFound();
+            //}
 
-        //    //_context.Games.Remove(game);
-        //    //await _context.SaveChangesAsync();
+            //_gameService.Games.Remove(game);
+            //await _gameService.SaveChangesAsync();
 
-        //    //return NoContent();
-        //    throw new NotImplementedException();
-        //}
+            //return NoContent();
+            throw new NotImplementedException();
+        }
 
-        //private bool GameExists(int id)
-        //{
-        //    //return (_context.Games?.Any(e => e.Id == id)).GetValueOrDefault();
-        //    throw new NotImplementedException();
-        //}
+        private bool GameExists(int id)
+        {
+            //return (_gameService.Games?.Any(e => e.Id == id)).GetValueOrDefault();
+            throw new NotImplementedException();
+        }
     }
 }

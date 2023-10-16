@@ -1384,11 +1384,11 @@
           }
         }
       },
-      "Microsoft.EntityFrameworkCore.SqlServer/6.0.21": {
+      "Microsoft.EntityFrameworkCore.SqlServer/6.0.23": {
         "type": "package",
         "dependencies": {
           "Microsoft.Data.SqlClient": "2.1.4",
-          "Microsoft.EntityFrameworkCore.Relational": "6.0.21"
+          "Microsoft.EntityFrameworkCore.Relational": "6.0.23"
         },
         "compile": {
           "lib/net6.0/Microsoft.EntityFrameworkCore.SqlServer.dll": {
@@ -5762,17 +5762,17 @@
         "microsoft.entityframeworkcore.sqlite.core.nuspec"
       ]
     },
-    "Microsoft.EntityFrameworkCore.SqlServer/6.0.21": {
-      "sha512": "csFkL9F/pk3od2p6I9OxlnYmKGM0kmWoJx2GOQbAgvmq8QT41MUZKETVAewAKmGiI7lg10jc4KTb/IaLr7rN+w==",
+    "Microsoft.EntityFrameworkCore.SqlServer/6.0.23": {
+      "sha512": "6ajE6SC+5zSjvadvZGeehbzmyf/zIirClCrer4y7hL7lq4K0jg/CZS8I2V2afC01Misb7n7owSM+XWqOb9eT3Q==",
       "type": "package",
-      "path": "microsoft.entityframeworkcore.sqlserver/6.0.21",
+      "path": "microsoft.entityframeworkcore.sqlserver/6.0.23",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
         "lib/net6.0/Microsoft.EntityFrameworkCore.SqlServer.dll",
         "lib/net6.0/Microsoft.EntityFrameworkCore.SqlServer.xml",
-        "microsoft.entityframeworkcore.sqlserver.6.0.21.nupkg.sha512",
+        "microsoft.entityframeworkcore.sqlserver.6.0.23.nupkg.sha512",
         "microsoft.entityframeworkcore.sqlserver.nuspec"
       ]
     },
@@ -11751,6 +11751,7 @@
   "projectFileDependencyGroups": {
     "net6.0": [
       "Microsoft.EntityFrameworkCore >= 7.0.11",
+      "Microsoft.EntityFrameworkCore.SqlServer >= 6.0.23",
       "Microsoft.EntityFrameworkCore.Sqlite >= 7.0.11",
       "Microsoft.EntityFrameworkCore.Sqlite.Core >= 7.0.11",
       "Microsoft.EntityFrameworkCore.Tools >= 7.0.11",
@@ -11761,19 +11762,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\westcrime\\.nuget\\packages\\": {}
+    "C:\\Users\\dmitriy\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\westcrime\\Documents\\SPPR\\WEB_153502_Tolstoi\\WEB_153502_Tolstoi.csproj",
+      "projectUniqueName": "C:\\bsuir\\SPPR\\WEB_153502_Tolstoi\\WEB_153502_Tolstoi.csproj",
       "projectName": "WEB_153502_Tolstoi",
-      "projectPath": "C:\\Users\\westcrime\\Documents\\SPPR\\WEB_153502_Tolstoi\\WEB_153502_Tolstoi.csproj",
-      "packagesPath": "C:\\Users\\westcrime\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\westcrime\\Documents\\SPPR\\WEB_153502_Tolstoi\\obj\\",
+      "projectPath": "C:\\bsuir\\SPPR\\WEB_153502_Tolstoi\\WEB_153502_Tolstoi.csproj",
+      "packagesPath": "C:\\Users\\dmitriy\\.nuget\\packages\\",
+      "outputPath": "C:\\bsuir\\SPPR\\WEB_153502_Tolstoi\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\westcrime\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\dmitriy\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -11781,18 +11782,17 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\westcrime\\Documents\\SPPR\\Web_153502_Tolstoi.API\\Web_153502_Tolstoi.API.csproj": {
-              "projectPath": "C:\\Users\\westcrime\\Documents\\SPPR\\Web_153502_Tolstoi.API\\Web_153502_Tolstoi.API.csproj"
+            "C:\\bsuir\\SPPR\\Web_153502_Tolstoi.API\\Web_153502_Tolstoi.API.csproj": {
+              "projectPath": "C:\\bsuir\\SPPR\\Web_153502_Tolstoi.API\\Web_153502_Tolstoi.API.csproj"
             },
-            "C:\\Users\\westcrime\\Documents\\SPPR\\Web_153502_Tolstoi.Domain\\Web_153502_Tolstoi.Domain.csproj": {
-              "projectPath": "C:\\Users\\westcrime\\Documents\\SPPR\\Web_153502_Tolstoi.Domain\\Web_153502_Tolstoi.Domain.csproj"
+            "C:\\bsuir\\SPPR\\Web_153502_Tolstoi.Domain\\Web_153502_Tolstoi.Domain.csproj": {
+              "projectPath": "C:\\bsuir\\SPPR\\Web_153502_Tolstoi.Domain\\Web_153502_Tolstoi.Domain.csproj"
             }
           }
         }
@@ -11810,6 +11810,10 @@
           "Microsoft.EntityFrameworkCore": {
             "target": "Package",
             "version": "[7.0.11, )"
+          },
+          "Microsoft.EntityFrameworkCore.SqlServer": {
+            "target": "Package",
+            "version": "[6.0.23, )"
           },
           "Microsoft.EntityFrameworkCore.Sqlite": {
             "target": "Package",

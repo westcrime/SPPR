@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "VmykNE3Q92GczkxLI1zqQZ88n8AV7stfEh38IdgrCok=",
+  "Hash": "HM/jVv07NnAEbiHdOibpyraeDpbpivS+pLSfrE7OLrE=",
   "Source": "Web_153502_Tolstoi.API",
   "BasePath": "_content/Web_153502_Tolstoi.API",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "Web_153502_Tolstoi.API\\wwwroot",
       "Source": "Web_153502_Tolstoi.API",
-      "ContentRoot": "C:\\Users\\westcrime\\Documents\\SPPR\\Web_153502_Tolstoi.API\\wwwroot\\",
+      "ContentRoot": "C:\\bsuir\\SPPR\\Web_153502_Tolstoi.API\\wwwroot\\",
       "BasePath": "_content/Web_153502_Tolstoi.API",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\westcrime\\Documents\\SPPR\\Web_153502_Tolstoi.API\\wwwroot\\Images\\dota.jpg",
+      "Identity": "C:\\bsuir\\SPPR\\Web_153502_Tolstoi.API\\wwwroot\\Images\\dota.jpg",
       "SourceId": "Web_153502_Tolstoi.API",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\westcrime\\Documents\\SPPR\\Web_153502_Tolstoi.API\\wwwroot\\",
+      "ContentRoot": "C:\\bsuir\\SPPR\\Web_153502_Tolstoi.API\\wwwroot\\",
       "BasePath": "_content/Web_153502_Tolstoi.API",
       "RelativePath": "Images/dota.jpg",
       "AssetKind": "All",
@@ -34,10 +34,10 @@
       "OriginalItemSpec": "wwwroot\\Images\\dota.jpg"
     },
     {
-      "Identity": "C:\\Users\\westcrime\\Documents\\SPPR\\Web_153502_Tolstoi.API\\wwwroot\\Images\\factorio.jpg",
+      "Identity": "C:\\bsuir\\SPPR\\Web_153502_Tolstoi.API\\wwwroot\\Images\\factorio.jpg",
       "SourceId": "Web_153502_Tolstoi.API",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\westcrime\\Documents\\SPPR\\Web_153502_Tolstoi.API\\wwwroot\\",
+      "ContentRoot": "C:\\bsuir\\SPPR\\Web_153502_Tolstoi.API\\wwwroot\\",
       "BasePath": "_content/Web_153502_Tolstoi.API",
       "RelativePath": "Images/factorio.jpg",
       "AssetKind": "All",
@@ -51,10 +51,10 @@
       "OriginalItemSpec": "wwwroot\\Images\\factorio.jpg"
     },
     {
-      "Identity": "C:\\Users\\westcrime\\Documents\\SPPR\\Web_153502_Tolstoi.API\\wwwroot\\Images\\fifa23.jpg",
+      "Identity": "C:\\bsuir\\SPPR\\Web_153502_Tolstoi.API\\wwwroot\\Images\\fifa23.jpg",
       "SourceId": "Web_153502_Tolstoi.API",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\westcrime\\Documents\\SPPR\\Web_153502_Tolstoi.API\\wwwroot\\",
+      "ContentRoot": "C:\\bsuir\\SPPR\\Web_153502_Tolstoi.API\\wwwroot\\",
       "BasePath": "_content/Web_153502_Tolstoi.API",
       "RelativePath": "Images/fifa23.jpg",
       "AssetKind": "All",
@@ -68,10 +68,10 @@
       "OriginalItemSpec": "wwwroot\\Images\\fifa23.jpg"
     },
     {
-      "Identity": "C:\\Users\\westcrime\\Documents\\SPPR\\Web_153502_Tolstoi.API\\wwwroot\\Images\\fs23.jpg",
+      "Identity": "C:\\bsuir\\SPPR\\Web_153502_Tolstoi.API\\wwwroot\\Images\\fs23.jpg",
       "SourceId": "Web_153502_Tolstoi.API",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\westcrime\\Documents\\SPPR\\Web_153502_Tolstoi.API\\wwwroot\\",
+      "ContentRoot": "C:\\bsuir\\SPPR\\Web_153502_Tolstoi.API\\wwwroot\\",
       "BasePath": "_content/Web_153502_Tolstoi.API",
       "RelativePath": "Images/fs23.jpg",
       "AssetKind": "All",
@@ -85,10 +85,10 @@
       "OriginalItemSpec": "wwwroot\\Images\\fs23.jpg"
     },
     {
-      "Identity": "C:\\Users\\westcrime\\Documents\\SPPR\\Web_153502_Tolstoi.API\\wwwroot\\Images\\starcraft2.jpg",
+      "Identity": "C:\\bsuir\\SPPR\\Web_153502_Tolstoi.API\\wwwroot\\Images\\starcraft2.jpg",
       "SourceId": "Web_153502_Tolstoi.API",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\westcrime\\Documents\\SPPR\\Web_153502_Tolstoi.API\\wwwroot\\",
+      "ContentRoot": "C:\\bsuir\\SPPR\\Web_153502_Tolstoi.API\\wwwroot\\",
       "BasePath": "_content/Web_153502_Tolstoi.API",
       "RelativePath": "Images/starcraft2.jpg",
       "AssetKind": "All",

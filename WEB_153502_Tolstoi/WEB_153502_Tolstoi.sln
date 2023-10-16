@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WEB_153502_Tolstoi", "WEB_1
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Web_153502_Tolstoi.Domain", "..\Web_153502_Tolstoi.Domain\Web_153502_Tolstoi.Domain.csproj", "{F020AD04-2FDC-4354-A4DE-CA6DBE3D7D95}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web_153502_Tolstoi.API", "..\Web_153502_Tolstoi.API\Web_153502_Tolstoi.API.csproj", "{28161391-40F5-4ADB-A22C-B854E6B76B5B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Web_153502_Tolstoi.API", "..\Web_153502_Tolstoi.API\Web_153502_Tolstoi.API.csproj", "{28161391-40F5-4ADB-A22C-B854E6B76B5B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
