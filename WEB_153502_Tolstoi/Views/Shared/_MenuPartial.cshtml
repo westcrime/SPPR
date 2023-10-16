@@ -3,6 +3,8 @@
         .ToString()?
         .ToLower()
         ?? String.Empty;
+
+    ViewData["Student's book number"] = 15350134;
 }
 
 @*
@@ -15,13 +17,13 @@
             @ViewData["student's book number"]
         </li>
         <li class="nav-item">
-            <a class="nav-link active" @(controller == "home" ? "active" : "")" aria-current="page" asp-controller="Home" asp-action="Index">Лб1</a>
+            <a class="nav-link @(controller == "home" ? "active" : "")" asp-controller="Home" asp-action="Index">Лб1</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" @(controller == "product" ? "active" : "")" asp-controller="Product" asp-action="Index">Каталог</a>
+            <a class="nav-link @(controller == "game" ? "active" : "")" asp-controller="Game" asp-action="Index">Каталог</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" @(controller == "admin" ? "active" : "")" asp-area="Admin" asp-page="/Index">Администрирование</a>
+            <a class="nav-link @(controller == "admin" ? "active" : "")" asp-area="Admin" asp-page="/Index">Администрирование</a>
         </li>
     </ul>
 </div>

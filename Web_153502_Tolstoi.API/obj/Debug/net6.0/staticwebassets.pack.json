@@ -1,0 +1,41 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\westcrime\\Documents\\SPPR\\Web_153502_Tolstoi.API\\wwwroot\\Images\\dota.jpg",
+      "PackagePath": "staticwebassets\\Images\\dota.jpg"
+    },
+    {
+      "Id": "C:\\Users\\westcrime\\Documents\\SPPR\\Web_153502_Tolstoi.API\\wwwroot\\Images\\factorio.jpg",
+      "PackagePath": "staticwebassets\\Images\\factorio.jpg"
+    },
+    {
+      "Id": "C:\\Users\\westcrime\\Documents\\SPPR\\Web_153502_Tolstoi.API\\wwwroot\\Images\\fifa23.jpg",
+      "PackagePath": "staticwebassets\\Images\\fifa23.jpg"
+    },
+    {
+      "Id": "C:\\Users\\westcrime\\Documents\\SPPR\\Web_153502_Tolstoi.API\\wwwroot\\Images\\fs23.jpg",
+      "PackagePath": "staticwebassets\\Images\\fs23.jpg"
+    },
+    {
+      "Id": "C:\\Users\\westcrime\\Documents\\SPPR\\Web_153502_Tolstoi.API\\wwwroot\\Images\\starcraft2.jpg",
+      "PackagePath": "staticwebassets\\Images\\starcraft2.jpg"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.Web_153502_Tolstoi.API.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.build.Web_153502_Tolstoi.API.props",
+      "PackagePath": "build\\Web_153502_Tolstoi.API.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildMultiTargeting.Web_153502_Tolstoi.API.props",
+      "PackagePath": "buildMultiTargeting\\Web_153502_Tolstoi.API.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildTransitive.Web_153502_Tolstoi.API.props",
+      "PackagePath": "buildTransitive\\Web_153502_Tolstoi.API.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
