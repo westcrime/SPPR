@@ -14,6 +14,11 @@ namespace Web_153502_Tolstoi.API.Services
         /// <returns></returns>
         public Task<ResponseData<ListModel<Game>>> GetGameListAsync(string? categoryNormalizedName, int pageNo = 1, int pageSize = 3);
         /// <summary>
+        /// Получение полного списка всех объектов
+        /// </summary>
+        /// <returns></returns>
+        public Task<ResponseData<List<Game>>> GetFullGameListAsync();
+        /// <summary>
         /// Поиск объекта по Id
         /// </summary>
         /// <param name="id">Идентификатор объекта</param>
@@ -37,7 +42,7 @@ namespace Web_153502_Tolstoi.API.Services
         /// </summary>
         /// <param name="game">Новый объект</param>
         /// <returns>Созданный объект</returns>
-        public Task<ResponseData<Game>> CreateGameAsync(Game game, IFormFile formFile);
+        public Task<ResponseData<Game>> CreateGameAsync(Game game);
         /// <summary>
         /// Сохранить файл изображения для объекта
         /// </summary>

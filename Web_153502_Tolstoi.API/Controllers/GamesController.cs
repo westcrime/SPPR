@@ -36,7 +36,7 @@ namespace Web_153502_Tolstoi.API.Controllers
         [HttpGet()]
         public async Task<ActionResult<ResponseData<ListModel<Game>>>> GetGames()
         {
-            return Ok(await _gameService.GetGameListAsync(null, 1, 3));
+            return Ok(await _gameService.GetFullGameListAsync());
         }
 
         // GET: api/Games/category/pageNo
@@ -123,9 +123,9 @@ namespace Web_153502_Tolstoi.API.Controllers
         // POST: api/Games
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Game>> PostGame(Game game, IFormFile formFile)
+        public async Task<ActionResult<Game>> PostGame(Game game)
         {
-            await _gameService.CreateGameAsync(game, formFile);
+            await _gameService.CreateGameAsync(game);
 
             return CreatedAtAction("PostGame", new { id = game.Id }, game);
         }

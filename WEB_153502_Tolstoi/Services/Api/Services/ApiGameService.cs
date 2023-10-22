@@ -30,16 +30,13 @@ namespace WEB_153502_Tolstoi.Services.Api.Services
             _logger = logger;
         }
 
-        public async Task<ResponseData<Game>> CreateGameAsync(Game game, IFormFile formFile)
+        public async Task<ResponseData<Game>> CreateGameAsync(Game game)
         {
             var uri = new Uri(_httpClient.BaseAddress.AbsoluteUri + "Games");
-            if (formFile != null)
-                await this.SaveImageAsync(game.Id, formFile);
             var response = await _httpClient.PostAsJsonAsync(uri, game, _serializerOptions);
             if (response.IsSuccessStatusCode)
             {
                 var data = await response.Content.ReadFromJsonAsync<ResponseData<Game>>(_serializerOptions);
-                
                 return data; // game;
             }
             _logger.LogError($"-----> object not created. Error{response.StatusCode.ToString()}");
@@ -50,15 +47,51 @@ namespace WEB_153502_Tolstoi.Services.Api.Services
             };
         }
 
-        public Task DeleteGameAsync(int id)
+        public async Task DeleteGameAsync(int id)
         {
-            throw new NotImplementedException();
+            var request = new HttpRequestMessage
+            {
+                Method = HttpMethod.Delete,
+                RequestUri = new Uri($"{_httpClient.BaseAddress.AbsoluteUri}Games/{id}")
+            };
+            await _httpClient.SendAsync(request);
         }
 
         public Task<ResponseData<Game>> GetGameByIdAsync(int id)
         {
             throw new NotImplementedException();
         }
+
+        public async Task<ResponseData<List<Game>>> GetFullGameListAsync()
+        {
+            var urlString = new StringBuilder($"{_httpClient.BaseAddress.AbsoluteUri}Games/");
+            // отправить запрос к API
+            var response = await _httpClient.GetAsync(new Uri(urlString.ToString()));
+            if (response.IsSuccessStatusCode)
+            {
+                try
+                {
+                    var answer = await response.Content.ReadFromJsonAsync<ResponseData<List<Game>>>();
+                    return answer;
+                }
+                catch (System.Text.Json.JsonException ex)
+                {
+                    _logger.LogError($"-----> Ошибка: {ex.Message}");
+                    return new ResponseData<List<Game>>
+                    {
+                        Success = false,
+                        ErrorMessage = $"Ошибка: {ex.Message}"
+                    };
+                }
+            }
+            _logger.LogError($"-----> Данные не получены от сервера. Error:{response.StatusCode.ToString()}");
+            return new ResponseData<List<Game>>
+            {
+                Success = false,
+                ErrorMessage = $"Данные не получены от сервера. Error: {response.StatusCode.ToString()}"
+            };
+        }
+
 
         public async Task<ResponseData<ListModel<Game>>> GetGameListAsync(string? categoryNormalizedName = null, int pageNo = 1, int pageSize = 3)
         {
@@ -69,11 +102,7 @@ namespace WEB_153502_Tolstoi.Services.Api.Services
             {
                 urlString.Append($"{categoryNormalizedName}/");
             };
-            // добавить номер страницы в маршрут
-            if (pageNo > 1)
-            {
-                urlString.Append($"page{pageNo}");
-            };
+            urlString.Append($"page{pageNo}");
             // добавить размер страницы в строку запроса
             if (!_pageSize.Equals("3"))
             {

@@ -1,4 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.EntityFrameworkCore;
+using System.Drawing.Printing;
 using Web_153502_Tolstoi.API.Data;
 using Web_153502_Tolstoi.Domain.Entities;
 using Web_153502_Tolstoi.Domain.Models;
@@ -19,12 +21,11 @@ namespace Web_153502_Tolstoi.API.Services
             _httpContextAccessor = httpContextAccessor;
         }
 
-        public async Task<ResponseData<Game>> CreateGameAsync(Game game, IFormFile formFile)
+        public async Task<ResponseData<Game>> CreateGameAsync(Game game)
         {
             await _context.Database.MigrateAsync();
             await _context.SaveChangesAsync();
             await _context.Games.AddAsync(game);
-            await SaveImageAsync(game.Id, formFile);
             await _context.SaveChangesAsync();
             return new ResponseData<Game>()
             {
@@ -46,6 +47,18 @@ namespace Web_153502_Tolstoi.API.Services
             _context.Games.Remove(game);
             await _context.SaveChangesAsync();
         }
+
+        public async Task<ResponseData<List<Game>>> GetFullGameListAsync()
+        {
+            var games = await _context.Games.ToListAsync();
+            return new ResponseData<List<Game>>
+            {
+                Data = games,
+                Success = true,
+                ErrorMessage = null
+            };
+        }
+
 
         public async Task<ResponseData<ListModel<Game>>> GetGameListAsync(string? categoryNormalizedName, int pageNo = 1, int pageSize = 3)
         {

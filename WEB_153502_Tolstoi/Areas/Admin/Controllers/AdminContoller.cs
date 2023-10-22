@@ -60,9 +60,26 @@ namespace WEB_153502_Tolstoi.Areas.Admin.Controllers
         }
 
         // GET: Admin/Create
-        public IActionResult Create()
+        [HttpGet]
+        public async Task<IActionResult> Create()
         {
-            return View();
+            var games = (await _context.GetFullGameListAsync()).Data;
+            var maxId = games.Max(e => e.Id);
+            CreateViewModel createViewModel = new CreateViewModel();
+            createViewModel.Game = new Game()
+            {
+                Id = maxId + 1
+            };
+            createViewModel.Game.Image = "default.jpg";
+            for (var i = 1; i < maxId; i++)
+            {
+                if (games.Find(e => e.Id == i) == null)
+                {
+                    createViewModel.Game.Id = i;
+                    return View(createViewModel);
+                }
+            }
+            return View(createViewModel);
         }
 
         // POST: Admin/Create
@@ -74,9 +91,10 @@ namespace WEB_153502_Tolstoi.Areas.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
+                await _context.CreateGameAsync(createViewModel.Game);
                 if (createViewModel.Image != null && createViewModel.Image.Length > 0)
                 {
-                    await _context.CreateGameAsync(createViewModel.Game, createViewModel.Image);
+                    await _context.SaveImageAsync(createViewModel.Game.Id, createViewModel.Image);
                     return RedirectToAction(nameof(Index));
                 }
             }
@@ -143,12 +161,12 @@ namespace WEB_153502_Tolstoi.Areas.Admin.Controllers
         // GET: AdminGames/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null || (await _context.GetGameListAsync(null)).Data.Items == null)
+            if (id == null || (await _context.GetFullGameListAsync()).Data == null)
             {
                 return NotFound();
             }
 
-            var game = (await _context.GetGameListAsync(null)).Data.Items
+            var game = (await _context.GetFullGameListAsync()).Data
                 .FirstOrDefault(m => m.Id == id);
             if (game == null)
             {
@@ -163,23 +181,22 @@ namespace WEB_153502_Tolstoi.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            if ((await _context.GetGameListAsync(null)).Data.Items == null)
+            if ((await _context.GetFullGameListAsync()).Data == null)
             {
                 return Problem("Entity set 'AppDbContext.Games'  is null.");
             }
-            var game = (await _context.GetGameListAsync(null)).Data.Items.FirstOrDefault(m => m.Id == id);
+            var game = (await _context.GetFullGameListAsync()).Data.FirstOrDefault(m => m.Id == id);
             if (game != null)
             {
-                (await _context.GetGameListAsync(null)).Data.Items.Remove(game);
+                await _context.DeleteGameAsync(game.Id);
             }
 
-            //await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private async Task<bool> GameExists(int id)
         {
-            return ((await _context.GetGameListAsync(null)).Data.Items?.Any(e => e.Id == id)).GetValueOrDefault();
+            return ((await _context.GetFullGameListAsync()).Data?.Any(e => e.Id == id)).GetValueOrDefault();
         }
     }
 }
