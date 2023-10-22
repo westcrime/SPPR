@@ -23,9 +23,9 @@ namespace Web_153502_Tolstoi.API.Services
         /// Обновление объекта
         /// </summary>
         /// <param name="id">Id изменяемомго объекта</param>
-        /// <param name="Game">объект с новыми параметрами</param>
+        /// <param name="game">объект с новыми параметрами</param>
         /// <returns></returns>
-        public Task UpdateGameAsync(int id, Game Game);
+        public Task UpdateGameAsync(int id, Game game);
         /// <summary>
         /// Удаление объекта
         /// </summary>
@@ -35,9 +35,9 @@ namespace Web_153502_Tolstoi.API.Services
         /// <summary>
         /// Создание объекта
         /// </summary>
-        /// <param name="Game">Новый объект</param>
+        /// <param name="game">Новый объект</param>
         /// <returns>Созданный объект</returns>
-        public Task<ResponseData<Game>> CreateGameAsync(Game Game);
+        public Task<ResponseData<Game>> CreateGameAsync(Game game, IFormFile formFile);
         /// <summary>
         /// Сохранить файл изображения для объекта
         /// </summary>

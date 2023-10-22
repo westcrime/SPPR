@@ -8,23 +8,36 @@ using Microsoft.EntityFrameworkCore;
 using Web_153502_Tolstoi.API.Data;
 using Web_153502_Tolstoi.API.Services;
 using Web_153502_Tolstoi.Domain.Entities;
+using WEB_153502_Tolstoi.Areas.Admin.Models;
 
-namespace WEB_153502_Tolstoi.Views.Admin
+namespace WEB_153502_Tolstoi.Areas.Admin.Controllers
 {
+    [Area("Admin")]
     public class AdminController : Controller
     {
         private readonly IGameService _context;
-
         public AdminController(IGameService context)
         {
             _context = context;
         }
 
         // GET: Admin
+        [HttpGet()]
         public async Task<IActionResult> Index()
         {
-            return _context.GetGameListAsync(null) != null ?
-                        View((await _context.GetGameListAsync(null)).Data.Items.ToList()) :
+            var response = await _context.GetGameListAsync(null, 1, 3);
+            return response != null ?
+                        View(response.Data) :
+                        Problem("Entity set 'AppDbContext.Games'  is null.");
+        }
+
+        // GET: Admin/page
+        [HttpGet("page{pageNo}")]
+        public async Task<IActionResult> Index(int pageNo, int pageSize = 3)
+        {
+            var response = await _context.GetGameListAsync(null, pageNo, pageSize);
+            return response != null ?
+                        View(response.Data) :
                         Problem("Entity set 'AppDbContext.Games'  is null.");
         }
 
@@ -57,30 +70,34 @@ namespace WEB_153502_Tolstoi.Views.Admin
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,Description,CategoryId,Price,Image")] Game game)
+        public async Task<IActionResult> Create(CreateViewModel createViewModel)
         {
             if (ModelState.IsValid)
             {
-                await _context.CreateGameAsync(game);
-                return RedirectToAction(nameof(Index));
+                if (createViewModel.Image != null && createViewModel.Image.Length > 0)
+                {
+                    await _context.CreateGameAsync(createViewModel.Game, createViewModel.Image);
+                    return RedirectToAction(nameof(Index));
+                }
             }
-            return View(game);
+            return View(createViewModel);
         }
 
         // GET: AdminGames/Edit/5
+        [HttpGet]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null || (await _context.GetGameListAsync(null)).Data.Items == null)
             {
                 return NotFound();
             }
-
-            var game = (await _context.GetGameListAsync(null)).Data.Items.FirstOrDefault(m => m.Id == id);
-            if (game == null)
+            EditViewModel editViewModel = new EditViewModel();
+            editViewModel.Game = (await _context.GetGameListAsync(null)).Data.Items.FirstOrDefault(m => m.Id == id);
+            if (editViewModel.Game == null)
             {
                 return NotFound();
             }
-            return View(game);
+            return View(editViewModel);
         }
 
         // POST: AdminGames/Edit/5
@@ -88,9 +105,9 @@ namespace WEB_153502_Tolstoi.Views.Admin
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Description,CategoryId,Price,Image")] Game game)
+        public async Task<IActionResult> Edit(int id, EditViewModel editViewModel)
         {
-            if (id != game.Id)
+            if (id != editViewModel.Game.Id)
             {
                 return NotFound();
             }
@@ -99,12 +116,17 @@ namespace WEB_153502_Tolstoi.Views.Admin
             {
                 try
                 {
-                    await _context.UpdateGameAsync(id, game);
-                    //await _context.SaveChangesAsync();
+                    if (editViewModel.Image != null && editViewModel.Image.Length > 0)
+                    {
+                        await _context.SaveImageAsync(id, editViewModel.Image);
+                    }
+
+                    await _context.UpdateGameAsync(id, editViewModel.Game);
+
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!await GameExists(game.Id))
+                    if (!await GameExists(editViewModel.Game.Id))
                     {
                         return NotFound();
                     }
@@ -115,7 +137,7 @@ namespace WEB_153502_Tolstoi.Views.Admin
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(game);
+            return View(editViewModel.Game);
         }
 
         // GET: AdminGames/Delete/5
@@ -157,7 +179,7 @@ namespace WEB_153502_Tolstoi.Views.Admin
 
         private async Task<bool> GameExists(int id)
         {
-            return (((await _context.GetGameListAsync(null)).Data.Items?.Any(e => e.Id == id)).GetValueOrDefault());
+            return ((await _context.GetGameListAsync(null)).Data.Items?.Any(e => e.Id == id)).GetValueOrDefault();
         }
     }
 }

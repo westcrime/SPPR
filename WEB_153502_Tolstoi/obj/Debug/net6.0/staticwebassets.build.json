@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "ExHQFn1pMUsVcj9kfo9SafORZWu5ZM7w2cvCAk9aBWA=",
+  "Hash": "GZW7v24vfN7WjAFwx3UhJzFAGgsvy42PNCsbn1iBgtw=",
   "Source": "WEB_153502_Tolstoi",
   "BasePath": "_content/WEB_153502_Tolstoi",
   "Mode": "Default",
@@ -87,12 +87,12 @@
       "OriginalItemSpec": "wwwroot\\Images\\fifa23.jpg"
     },
     {
-      "Identity": "C:\\bsuir\\SPPR\\Web_153502_Tolstoi.API\\wwwroot\\Images\\fs23.jpg",
+      "Identity": "C:\\bsuir\\SPPR\\Web_153502_Tolstoi.API\\wwwroot\\Images\\kwf5dgwq.jpg",
       "SourceId": "Web_153502_Tolstoi.API",
       "SourceType": "Project",
       "ContentRoot": "C:\\bsuir\\SPPR\\Web_153502_Tolstoi.API\\wwwroot\\",
       "BasePath": "_content/Web_153502_Tolstoi.API",
-      "RelativePath": "Images/fs23.jpg",
+      "RelativePath": "Images/kwf5dgwq.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -101,7 +101,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Images\\fs23.jpg"
+      "OriginalItemSpec": "wwwroot\\Images\\kwf5dgwq.jpg"
     },
     {
       "Identity": "C:\\bsuir\\SPPR\\Web_153502_Tolstoi.API\\wwwroot\\Images\\starcraft2.jpg",

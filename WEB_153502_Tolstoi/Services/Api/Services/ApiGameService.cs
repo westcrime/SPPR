@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Options;
+using Newtonsoft.Json;
 using System.Net.Http;
 using System.Text;
 using System.Text.Json;
@@ -29,13 +30,16 @@ namespace WEB_153502_Tolstoi.Services.Api.Services
             _logger = logger;
         }
 
-        public async Task<ResponseData<Game>> CreateGameAsync(Game game)
+        public async Task<ResponseData<Game>> CreateGameAsync(Game game, IFormFile formFile)
         {
             var uri = new Uri(_httpClient.BaseAddress.AbsoluteUri + "Games");
+            if (formFile != null)
+                await this.SaveImageAsync(game.Id, formFile);
             var response = await _httpClient.PostAsJsonAsync(uri, game, _serializerOptions);
             if (response.IsSuccessStatusCode)
             {
                 var data = await response.Content.ReadFromJsonAsync<ResponseData<Game>>(_serializerOptions);
+                
                 return data; // game;
             }
             _logger.LogError($"-----> object not created. Error{response.StatusCode.ToString()}");
@@ -81,9 +85,10 @@ namespace WEB_153502_Tolstoi.Services.Api.Services
             {
                 try
                 {
-                    return await response.Content.ReadFromJsonAsync<ResponseData<ListModel<Game>>>();
+                    var answer = await response.Content.ReadFromJsonAsync<ResponseData<ListModel<Game>>>();
+                    return answer;
                 }
-                catch (JsonException ex)
+                catch (System.Text.Json.JsonException ex)
                 {
                     _logger.LogError($"-----> Ошибка: {ex.Message}");
                     return new ResponseData<ListModel<Game>>
@@ -93,7 +98,7 @@ namespace WEB_153502_Tolstoi.Services.Api.Services
                     };
                 }
             }
-            _logger.LogError($"-----> Данные не получены от сервера. Error:{ response.StatusCode.ToString()}");
+            _logger.LogError($"-----> Данные не получены от сервера. Error:{response.StatusCode.ToString()}");
             return new ResponseData<ListModel<Game>>
             {
                 Success = false,
@@ -101,14 +106,39 @@ namespace WEB_153502_Tolstoi.Services.Api.Services
             };
         }
 
-        public Task<ResponseData<string>> SaveImageAsync(int id, IFormFile formFile)
+        public async Task<ResponseData<string>> SaveImageAsync(int id, IFormFile image)
         {
-            throw new NotImplementedException();
+            var request = new HttpRequestMessage
+            {
+                Method = HttpMethod.Post,
+                RequestUri = new Uri($"{_httpClient.BaseAddress.AbsoluteUri}Games/{id}")
+            };
+            var content = new MultipartFormDataContent();
+            var streamContent =
+            new StreamContent(image.OpenReadStream());
+            content.Add(streamContent, "formFile", image.FileName);
+            request.Content = content;
+            await _httpClient.SendAsync(request);
+            return new ResponseData<string>()
+            {
+                Success = true,
+                Data = $"{image.FileName} is added",
+                ErrorMessage = null
+            };
         }
 
-        public Task UpdateGameAsync(int id, Game Game)
+        public async Task UpdateGameAsync(int id, Game game)
         {
-            throw new NotImplementedException();
+            var gameJson = JsonConvert.SerializeObject(game); // Сериализуем объект game в JSON
+
+            var request = new HttpRequestMessage
+            {
+                Method = HttpMethod.Put,
+                RequestUri = new Uri($"{_httpClient.BaseAddress.AbsoluteUri}Games/{id}"),
+                Content = new StringContent(gameJson, Encoding.UTF8, "application/json") // Добавляем JSON к телу запроса
+
+            };
+            await _httpClient.SendAsync(request);
         }
     }
 }

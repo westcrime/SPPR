@@ -16,6 +16,7 @@ builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
 builder.Services.AddScoped<IGameService, GameService>();
+builder.Services.AddHttpContextAccessor();
 builder.Services.AddScoped<ICategoryService, CategoryService>();
 
 var app = builder.Build();
@@ -26,6 +27,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseStaticFiles();
 
 app.UseHttpsRedirection();
 

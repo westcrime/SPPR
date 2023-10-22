@@ -18,10 +18,18 @@ namespace Web_153502_Tolstoi.API.Controllers
     public class GamesController : ControllerBase
     {
         IGameService _gameService;
+        private ILogger<GamesController> _logger;
+        private string _imagesPath;
+        private string? _appUri;
 
-        public GamesController(IGameService gameService)
+        public GamesController(IGameService gameService, IWebHostEnvironment env,
+            IConfiguration configuration,
+            ILogger<GamesController> logger)
         {
             _gameService = gameService;
+            _logger = logger;
+            _imagesPath = Path.Combine(env.WebRootPath, "Images");
+            _appUri = configuration.GetSection("appUri").Value;
         }
 
         // GET: api/Games
@@ -71,6 +79,18 @@ namespace Web_153502_Tolstoi.API.Controllers
             return game;
         }
 
+        // POST: api/Games/5
+        [HttpPost("{id}")]
+        public async Task<ActionResult<ResponseData<string>>> PostImage(int id,
+            IFormFile formFile)
+        {
+            var response = await _gameService.SaveImageAsync(id, formFile);
+            if (response.Success)
+            {
+            }
+            return NotFound(response);
+        }
+
         // PUT: api/Games/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
@@ -81,15 +101,13 @@ namespace Web_153502_Tolstoi.API.Controllers
                 return BadRequest();
             }
 
-            //_gameService.Entry(game).State = EntityState.Modified;
-
             try
             {
-                //await _gameService.SaveChangesAsync();
+                await _gameService.UpdateGameAsync(id, game);
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!GameExists(id))
+                if (!(await GameExists(id)))
                 {
                     return NotFound();
                 }
@@ -105,44 +123,35 @@ namespace Web_153502_Tolstoi.API.Controllers
         // POST: api/Games
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Game>> PostGame(Game game)
+        public async Task<ActionResult<Game>> PostGame(Game game, IFormFile formFile)
         {
-            //if (_gameService.Games == null)
-            //{
-            //    return Problem("Entity set 'AppDbContext.Games'  is null.");
-            //}
-            //  _gameService.Games.Add(game);
-            //  await _gameService.SaveChangesAsync();
+            await _gameService.CreateGameAsync(game, formFile);
 
-            //  return CreatedAtAction("GetGame", new { id = game.Id }, game);
-            throw new NotImplementedException();
+            return CreatedAtAction("PostGame", new { id = game.Id }, game);
         }
 
         // DELETE: api/Games/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteGame(int id)
         {
-            //if (_gameService.Games == null)
-            //{
-            //    return NotFound();
-            //}
-            //var game = await _gameService.Games.FindAsync(id);
-            //if (game == null)
-            //{
-            //    return NotFound();
-            //}
+            var game = await _gameService.GetGameByIdAsync(id);
+            if (game == null)
+            {
+                return NotFound();
+            }
 
-            //_gameService.Games.Remove(game);
-            //await _gameService.SaveChangesAsync();
+            await _gameService.DeleteGameAsync(id);
 
-            //return NoContent();
-            throw new NotImplementedException();
+            return NoContent();
         }
 
-        private bool GameExists(int id)
+        private async Task<bool> GameExists(int id)
         {
-            //return (_gameService.Games?.Any(e => e.Id == id)).GetValueOrDefault();
-            throw new NotImplementedException();
+            if ((await _gameService.GetGameByIdAsync(id)) != null)
+            {
+                return true;
+            }
+            return false;
         }
     }
 }

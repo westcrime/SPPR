@@ -8,6 +8,7 @@ using System.Text.Json.Serialization;
 using WEB_153502_Tolstoi.Services.Api.Services;
 using Microsoft.Extensions.DependencyInjection;
 using Web_153502_Tolstoi.API.Services;
+using Microsoft.AspNetCore.Builder;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -35,9 +36,13 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.UseAuthorization();
-
+app.MapAreaControllerRoute(
+    name: "Admin_area",
+    areaName: "Admin",
+    pattern: "{controller=Home}/{action=Index}/{id?}");
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
+
 
 app.Run();

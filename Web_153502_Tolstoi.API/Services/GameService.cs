@@ -9,20 +9,42 @@ namespace Web_153502_Tolstoi.API.Services
     {
         private readonly int _maxPageSize = 20;
         AppDbContext _context;
+        private IWebHostEnvironment _webHostEnvironment;
+        private IHttpContextAccessor _httpContextAccessor;
 
-        public GameService(AppDbContext context)
+        public GameService(AppDbContext context, IWebHostEnvironment webHostEnvironment, IHttpContextAccessor httpContextAccessor)
         {
             _context = context;
+            _webHostEnvironment = webHostEnvironment;
+            _httpContextAccessor = httpContextAccessor;
         }
 
-        public Task<ResponseData<Game>> CreateGameAsync(Game Game)
+        public async Task<ResponseData<Game>> CreateGameAsync(Game game, IFormFile formFile)
         {
-            throw new NotImplementedException();
+            await _context.Database.MigrateAsync();
+            await _context.SaveChangesAsync();
+            await _context.Games.AddAsync(game);
+            await SaveImageAsync(game.Id, formFile);
+            await _context.SaveChangesAsync();
+            return new ResponseData<Game>()
+            {
+                Success = true,
+                Data = game,
+                ErrorMessage = null
+            };
         }
 
-        public Task DeleteGameAsync(int id)
+        public async Task DeleteGameAsync(int id)
         {
-            throw new NotImplementedException();
+            await _context.Database.MigrateAsync();
+            await _context.SaveChangesAsync();
+            var game = await _context.Games.FindAsync(id);
+            if (game == null)
+            {
+                throw new Exception("Entity is not found to remove!");
+            }
+            _context.Games.Remove(game);
+            await _context.SaveChangesAsync();
         }
 
         public async Task<ResponseData<ListModel<Game>>> GetGameListAsync(string? categoryNormalizedName, int pageNo = 1, int pageSize = 3)
@@ -89,19 +111,78 @@ namespace Web_153502_Tolstoi.API.Services
             }
         }
 
-        public Task<ResponseData<Game>> GetGameByIdAsync(int id)
+        public async Task<ResponseData<Game>> GetGameByIdAsync(int id)
         {
-            throw new NotImplementedException();
+            await _context.Database.MigrateAsync();
+            await _context.SaveChangesAsync();
+            var game = await _context.Games.FindAsync(id);
+            if (game == null)
+            {
+                throw new Exception("Entity is not found to remove!");
+            }
+            return new ResponseData<Game>()
+            {
+                Data = game,
+                Success = true,
+                ErrorMessage = null
+            };
         }
 
-        public Task<ResponseData<string>> SaveImageAsync(int id, IFormFile formFile)
+        public async Task<ResponseData<string>> SaveImageAsync(int id, IFormFile formFile)
         {
-            throw new NotImplementedException();
+            var responseData = new ResponseData<string>();
+            var game = await _context.Games.FindAsync(id);
+            if (game == null)
+            {
+                responseData.Success = false;
+                responseData.ErrorMessage = "No item found";
+                return responseData;
+            }
+            var host = "https://" + _httpContextAccessor.HttpContext.Request.Host;
+            var imageFolder = Path.Combine(_webHostEnvironment.WebRootPath, "Images");
+            if (formFile != null)
+                // Удалить предыдущее изображение
+                if (!String.IsNullOrEmpty(game.Image))
+                {
+                    var prevImage = Path.Combine(imageFolder, Path.GetFileName(game.Image));
+                    if (File.Exists(prevImage))
+                    {
+                        File.Delete(prevImage); // Удаляем файл, если он существует
+                    }
+                }
+            // Создать имя файла
+            var ext = Path.GetExtension(formFile.FileName);
+            var fName = Path.ChangeExtension(Path.GetRandomFileName(), ext);
+            // Сохранить файл
+            using (var stream = new FileStream(Path.Combine(imageFolder, fName), FileMode.Create))
+            {
+                await formFile.CopyToAsync(stream);
+            }
+            // Указать имя файла в объекте
+            game.Image = $"{host}/Images/{fName}";
+            await _context.SaveChangesAsync();
+            responseData.Data = game.Image;
+            return responseData;
         }
 
-        public Task UpdateGameAsync(int id, Game Game)
+        public async Task UpdateGameAsync(int id, Game game)
         {
-            throw new NotImplementedException();
+            await _context.Database.MigrateAsync();
+            await _context.SaveChangesAsync();
+            var gameToUpdate = await _context.Games.FirstOrDefaultAsync(g => g.Id == id);
+            if (gameToUpdate != null)
+            {
+                gameToUpdate.Name = game.Name;
+                gameToUpdate.Description = game.Description;
+                gameToUpdate.Price = game.Price;
+                gameToUpdate.CategoryId = game.CategoryId;
+                _context.Games.Update(gameToUpdate);
+                await _context.SaveChangesAsync();
+            }
+            else
+            {
+                throw new Exception("Entity to update not found!");
+            }
         }
     }
 }
