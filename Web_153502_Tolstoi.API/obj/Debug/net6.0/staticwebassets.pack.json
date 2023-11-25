@@ -29,6 +29,10 @@
       "PackagePath": "staticwebassets\\Images\\thgvtkxu.jpg"
     },
     {
+      "Id": "C:\\bsuir\\SPPR\\Web_153502_Tolstoi.API\\wwwroot\\Images\\xt03dboq.jpg",
+      "PackagePath": "staticwebassets\\Images\\xt03dboq.jpg"
+    },
+    {
       "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.Web_153502_Tolstoi.API.Microsoft.AspNetCore.StaticWebAssets.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
     },

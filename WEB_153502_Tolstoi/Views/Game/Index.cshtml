@@ -42,44 +42,6 @@
 </div>
 <!-- выбор категории -->
 
-<div class="container">
-    <div class="row row-cols-3 g-3">
-        @foreach (var item in Model.Items)
-        {
-            <div class="col">
-                <div class="card" style="width: 18rem">
-                    <img src="@item.Image" style="width: 18rem; height: 200px" class="card-img-top" alt="pic-of-the-game">
-                    <div class="card-body">
-                        <h5 class="card-title">@item.Name</h5>
-                        <p class="card-text">@item.Description</p>
-                        <p class="card-text">Price: @item.Price $</p>
-                    </div>
-                    <div class="card-body">
-                        <a asp-action="Add" asp-route-id="@item.Id.ToString()" asp-route-returnurl="@returnUrl" asp-controller="Cart" class="btn btn-primary">Добавить в корзину</a>
-                    </div>
-                </div>
-            </div>
-        }
-    </div>
-</div>
-
-<div class="row-2">
-    <nav aria-label="Page navigation example">
-        <ul class="pagination">
-            <li class="page-item">
-                <a class="page-link @(Model.CurrentPage != 1 ? "" : "active")" asp-controller="Game" asp-action="Index" asp-route-category="@ViewData["currentCategory"]" asp-route-pageno="@prev" aria-label="Previous">
-                    <span aria-hidden="true">&laquo;</span>
-                </a>
-            </li>
-            <li class="page-item @(Model.CurrentPage - 1 <= 0 ? "invisible" : "")"><a class="page-link" asp-action="Index" asp-route-category="@ViewData["currentCategory"]" asp-route-pageno="@prev">@prev</a></li>
-            <li class="page-item disabled"><a class="page-link">@Model.CurrentPage</a></li>
-            <li class="page-item @(Model.CurrentPage + 1 > Model.TotalPages ? "invisible" : "")"><a class="page-link" asp-action="Index" asp-route-category="@ViewData["currentCategory"]" asp-route-pageno="@next">@next</a></li>
-            <li class="page-item">
-                <a class="page-link @(Model.CurrentPage != Model.TotalPages ? "" : "active")" asp-controller="Game" asp-action="Index" asp-route-category="@ViewData["currentCategory"]" asp-route-pageno="@next" aria-label="Next">
-                    <span aria-hidden="true">&raquo;</span>
-                </a>
-            </li>
-        </ul>
-    </nav>
-
+<div id="partialData">
+    <partial name="_GamePartial" />
 </div>

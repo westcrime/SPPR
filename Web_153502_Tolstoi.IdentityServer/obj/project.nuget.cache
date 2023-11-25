@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "KLRL+n9M0/YX3gKjacrHlb91da6x7man0E7O013H5K+zXMvCaMc7IrF79jrshoh4hq0rErpmCzrNumbs/GBKig==",
+  "dgSpecHash": "mDVFygikys+JIVq/8B2MV6yjSZFzWQrpU8qReQSX94u4zFLMrzp+jHjCD/pRikypW6Aezwav2wEC89/C5pZ75A==",
   "success": true,
   "projectFilePath": "C:\\bsuir\\SPPR\\Web_153502_Tolstoi.IdentityServer\\Web_153502_Tolstoi.IdentityServer.csproj",
   "expectedPackageFiles": [
@@ -67,6 +67,9 @@
     "C:\\Users\\dmitriy\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\6.0.23\\microsoft.aspnetcore.cryptography.keyderivation.6.0.23.nupkg.sha512",
     "C:\\Users\\dmitriy\\.nuget\\packages\\microsoft.aspnetcore.dataprotection.abstractions\\6.0.0\\microsoft.aspnetcore.dataprotection.abstractions.6.0.0.nupkg.sha512",
     "C:\\Users\\dmitriy\\.nuget\\packages\\microsoft.aspnetcore.diagnostics.entityframeworkcore\\6.0.0\\microsoft.aspnetcore.diagnostics.entityframeworkcore.6.0.0.nupkg.sha512",
+    "C:\\Users\\dmitriy\\.nuget\\packages\\microsoft.aspnetcore.http.abstractions\\2.2.0\\microsoft.aspnetcore.http.abstractions.2.2.0.nupkg.sha512",
+    "C:\\Users\\dmitriy\\.nuget\\packages\\microsoft.aspnetcore.http.extensions\\2.2.0\\microsoft.aspnetcore.http.extensions.2.2.0.nupkg.sha512",
+    "C:\\Users\\dmitriy\\.nuget\\packages\\microsoft.aspnetcore.http.features\\2.2.0\\microsoft.aspnetcore.http.features.2.2.0.nupkg.sha512",
     "C:\\Users\\dmitriy\\.nuget\\packages\\microsoft.aspnetcore.identity.entityframeworkcore\\6.0.23\\microsoft.aspnetcore.identity.entityframeworkcore.6.0.23.nupkg.sha512",
     "C:\\Users\\dmitriy\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.23\\microsoft.aspnetcore.identity.ui.6.0.23.nupkg.sha512",
     "C:\\Users\\dmitriy\\.nuget\\packages\\microsoft.aspnetcore.razor.language\\6.0.0\\microsoft.aspnetcore.razor.language.6.0.0.nupkg.sha512",
@@ -122,6 +125,7 @@
     "C:\\Users\\dmitriy\\.nuget\\packages\\microsoft.identitymodel.protocols\\6.10.0\\microsoft.identitymodel.protocols.6.10.0.nupkg.sha512",
     "C:\\Users\\dmitriy\\.nuget\\packages\\microsoft.identitymodel.protocols.openidconnect\\6.10.0\\microsoft.identitymodel.protocols.openidconnect.6.10.0.nupkg.sha512",
     "C:\\Users\\dmitriy\\.nuget\\packages\\microsoft.identitymodel.tokens\\6.10.0\\microsoft.identitymodel.tokens.6.10.0.nupkg.sha512",
+    "C:\\Users\\dmitriy\\.nuget\\packages\\microsoft.net.http.headers\\2.2.0\\microsoft.net.http.headers.2.2.0.nupkg.sha512",
     "C:\\Users\\dmitriy\\.nuget\\packages\\microsoft.net.stringtools\\17.3.2\\microsoft.net.stringtools.17.3.2.nupkg.sha512",
     "C:\\Users\\dmitriy\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\dmitriy\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",

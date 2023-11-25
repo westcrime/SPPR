@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "I1E1HXsHEGtjJt0rr3GpLfq7bN7x2JURDAmtVM40cC0=",
+  "Hash": "gjeuZqcHtkkKch174blODCh6Yzf0GeDsMinVanCV2UU=",
   "Source": "Web_153502_Tolstoi.API",
   "BasePath": "_content/Web_153502_Tolstoi.API",
   "Mode": "Default",
@@ -134,6 +134,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Images\\thgvtkxu.jpg"
+    },
+    {
+      "Identity": "C:\\bsuir\\SPPR\\Web_153502_Tolstoi.API\\wwwroot\\Images\\xt03dboq.jpg",
+      "SourceId": "Web_153502_Tolstoi.API",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\bsuir\\SPPR\\Web_153502_Tolstoi.API\\wwwroot\\",
+      "BasePath": "_content/Web_153502_Tolstoi.API",
+      "RelativePath": "Images/xt03dboq.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\xt03dboq.jpg"
     }
   ]
 }

@@ -62,7 +62,7 @@ namespace Web_153502_Tolstoi.API.Services
                     {
                         Success = true,
                         Data = true,
-                        ErrorMessage = String.Empty
+                        ErrorMessage = string.Empty
                     };
                 }
                 else
@@ -247,7 +247,7 @@ namespace Web_153502_Tolstoi.API.Services
                 {
                     Data = game,
                     Success = true,
-                    ErrorMessage = String.Empty
+                    ErrorMessage = string.Empty
                 };
             }
             else

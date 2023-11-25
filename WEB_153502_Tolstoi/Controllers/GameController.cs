@@ -2,6 +2,10 @@
 using Web_153502_Tolstoi.API.Services;
 using Web_153502_Tolstoi.Domain.Entities;
 using Web_153502_Tolstoi.Domain.Models;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Http.Extensions;
+using System.Drawing.Printing;
+using WEB_153502_Tolstoi.Extensions;
 
 namespace WEB_153502_Tolstoi.Controllers
 {
@@ -17,7 +21,7 @@ namespace WEB_153502_Tolstoi.Controllers
             _categoryService = catService;
         }
 
-        public async Task<IActionResult> Index(string? category, int pageNo = 1)
+        public async Task<IActionResult> Index(string? category = "", int pageNo = 1)
         {
 
             var gameResponse = new ResponseData<ListModel<Game>>();
@@ -25,7 +29,7 @@ namespace WEB_153502_Tolstoi.Controllers
             var categories = (await _categoryService.GetCategoryListAsync()).Data;
             ViewBag.Categories = categories;
 
-            if (category != null) 
+            if (category != string.Empty) 
             {
                 gameResponse = await _gameService.GetGameListAsync(category, pageNo);
                 if (!gameResponse.Success)
@@ -39,6 +43,11 @@ namespace WEB_153502_Tolstoi.Controllers
             gameResponse = await _gameService.GetGameListAsync(null, pageNo);
             if (!gameResponse.Success)
                 return NotFound(gameResponse.ErrorMessage);
+
+            if (Request.IsAjaxRequest())
+            {
+                return PartialView("_GamePartial", gameResponse.Data);
+            }
 
             return View(gameResponse.Data);
         }
