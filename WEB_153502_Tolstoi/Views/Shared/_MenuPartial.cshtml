@@ -23,7 +23,7 @@
             <a class="nav-link @(controller == "game" ? "active" : "")" asp-controller="Game" asp-action="Index">Каталог</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link @(controller == "admin" ? "active" : "")" asp-action="Index" asp-controller="Admin" asp-route-area="Admin">Администрирование</a>
+            <a class="nav-link @(controller == "admin" ? "active" : "")" asp-page="/Index" asp-area="Admin">Администрирование</a>
         </li>
     </ul>
 </div>

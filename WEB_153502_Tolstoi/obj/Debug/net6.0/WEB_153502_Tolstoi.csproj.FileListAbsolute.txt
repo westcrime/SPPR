@@ -599,7 +599,6 @@ C:\bsuir\SPPR\WEB_153502_Tolstoi\obj\Debug\net6.0\staticwebassets\msbuild.buildT
 C:\bsuir\SPPR\WEB_153502_Tolstoi\obj\Debug\net6.0\staticwebassets.pack.json
 C:\bsuir\SPPR\WEB_153502_Tolstoi\obj\Debug\net6.0\staticwebassets.build.json
 C:\bsuir\SPPR\WEB_153502_Tolstoi\obj\Debug\net6.0\staticwebassets.development.json
-C:\bsuir\SPPR\WEB_153502_Tolstoi\obj\Debug\net6.0\scopedcss\Areas\Admin\Views\Shared\_Layout.cshtml.rz.scp.css
 C:\bsuir\SPPR\WEB_153502_Tolstoi\obj\Debug\net6.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 C:\bsuir\SPPR\WEB_153502_Tolstoi\obj\Debug\net6.0\scopedcss\bundle\WEB_153502_Tolstoi.styles.css
 C:\bsuir\SPPR\WEB_153502_Tolstoi\obj\Debug\net6.0\scopedcss\projectbundle\WEB_153502_Tolstoi.bundle.scp.css
@@ -609,3 +608,5 @@ C:\bsuir\SPPR\WEB_153502_Tolstoi\obj\Debug\net6.0\refint\WEB_153502_Tolstoi.dll
 C:\bsuir\SPPR\WEB_153502_Tolstoi\obj\Debug\net6.0\WEB_153502_Tolstoi.pdb
 C:\bsuir\SPPR\WEB_153502_Tolstoi\obj\Debug\net6.0\WEB_153502_Tolstoi.genruntimeconfig.cache
 C:\bsuir\SPPR\WEB_153502_Tolstoi\obj\Debug\net6.0\ref\WEB_153502_Tolstoi.dll
+C:\bsuir\SPPR\WEB_153502_Tolstoi\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\bsuir\SPPR\WEB_153502_Tolstoi\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.OpenIdConnect.dll

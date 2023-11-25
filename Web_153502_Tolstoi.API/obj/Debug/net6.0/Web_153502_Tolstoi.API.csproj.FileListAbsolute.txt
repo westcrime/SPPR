@@ -586,3 +586,4 @@ C:\bsuir\SPPR\Web_153502_Tolstoi.API\obj\Debug\net6.0\refint\Web_153502_Tolstoi.
 C:\bsuir\SPPR\Web_153502_Tolstoi.API\obj\Debug\net6.0\Web_153502_Tolstoi.API.pdb
 C:\bsuir\SPPR\Web_153502_Tolstoi.API\obj\Debug\net6.0\Web_153502_Tolstoi.API.genruntimeconfig.cache
 C:\bsuir\SPPR\Web_153502_Tolstoi.API\obj\Debug\net6.0\ref\Web_153502_Tolstoi.API.dll
+C:\bsuir\SPPR\Web_153502_Tolstoi.API\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

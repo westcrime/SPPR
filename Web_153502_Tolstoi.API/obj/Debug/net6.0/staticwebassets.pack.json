@@ -1,10 +1,6 @@
 {
   "Files": [
     {
-      "Id": "C:\\bsuir\\SPPR\\Web_153502_Tolstoi.API\\wwwroot\\Images\\dota.jpg",
-      "PackagePath": "staticwebassets\\Images\\dota.jpg"
-    },
-    {
       "Id": "C:\\bsuir\\SPPR\\Web_153502_Tolstoi.API\\wwwroot\\Images\\factorio.jpg",
       "PackagePath": "staticwebassets\\Images\\factorio.jpg"
     },
@@ -13,12 +9,24 @@
       "PackagePath": "staticwebassets\\Images\\fifa23.jpg"
     },
     {
+      "Id": "C:\\bsuir\\SPPR\\Web_153502_Tolstoi.API\\wwwroot\\Images\\hd41pn4s.jpg",
+      "PackagePath": "staticwebassets\\Images\\hd41pn4s.jpg"
+    },
+    {
       "Id": "C:\\bsuir\\SPPR\\Web_153502_Tolstoi.API\\wwwroot\\Images\\kwf5dgwq.jpg",
       "PackagePath": "staticwebassets\\Images\\kwf5dgwq.jpg"
     },
     {
+      "Id": "C:\\bsuir\\SPPR\\Web_153502_Tolstoi.API\\wwwroot\\Images\\q5zoau4l.jpg",
+      "PackagePath": "staticwebassets\\Images\\q5zoau4l.jpg"
+    },
+    {
       "Id": "C:\\bsuir\\SPPR\\Web_153502_Tolstoi.API\\wwwroot\\Images\\starcraft2.jpg",
       "PackagePath": "staticwebassets\\Images\\starcraft2.jpg"
+    },
+    {
+      "Id": "C:\\bsuir\\SPPR\\Web_153502_Tolstoi.API\\wwwroot\\Images\\thgvtkxu.jpg",
+      "PackagePath": "staticwebassets\\Images\\thgvtkxu.jpg"
     },
     {
       "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.Web_153502_Tolstoi.API.Microsoft.AspNetCore.StaticWebAssets.props",

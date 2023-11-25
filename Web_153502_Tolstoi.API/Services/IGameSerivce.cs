@@ -1,4 +1,5 @@
-﻿using Web_153502_Tolstoi.Domain.Entities;
+﻿using Humanizer;
+using Web_153502_Tolstoi.Domain.Entities;
 using Web_153502_Tolstoi.Domain.Models;
 
 namespace Web_153502_Tolstoi.API.Services
@@ -30,13 +31,13 @@ namespace Web_153502_Tolstoi.API.Services
         /// <param name="id">Id изменяемомго объекта</param>
         /// <param name="game">объект с новыми параметрами</param>
         /// <returns></returns>
-        public Task UpdateGameAsync(int id, Game game);
+        public Task<ResponseData<Game>> UpdateGameAsync(int id, Game game);
         /// <summary>
         /// Удаление объекта
-        /// </summary>
+        /// </summary>  
         /// <param name="id">Id удаляемомго объекта</param>
         /// <returns></returns>
-        public Task DeleteGameAsync(int id);
+        public Task<ResponseData<bool>> DeleteGameAsync(int id);
         /// <summary>
         /// Создание объекта
         /// </summary>

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.CodeAnalysis.Operations;
@@ -13,6 +14,7 @@ using Web_153502_Tolstoi.Domain.Models;
 
 namespace Web_153502_Tolstoi.API.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class GamesController : ControllerBase
@@ -34,49 +36,67 @@ namespace Web_153502_Tolstoi.API.Controllers
 
         // GET: api/Games
         [HttpGet()]
+        [AllowAnonymous]
         public async Task<ActionResult<ResponseData<ListModel<Game>>>> GetGames()
         {
-            return Ok(await _gameService.GetFullGameListAsync());
+            var response = await _gameService.GetFullGameListAsync();
+            if (response.Success)
+            {
+                return Ok(response);
+            }
+            return NotFound(response);
         }
 
         // GET: api/Games/category/pageNo
         [HttpGet("{category}/page{pageNo}")]
+        [AllowAnonymous]
         public async Task<ActionResult<ResponseData<ListModel<Game>>>> GetGames(string category, int pageNo = 1, int pageSize = 3)
         {
-            return Ok(await _gameService.GetGameListAsync(category, pageNo, pageSize));
+            var response = await _gameService.GetGameListAsync(category, pageNo, pageSize);
+            if (response.Success)
+            {
+                return Ok(response);
+            }
+            return NotFound(response);
         }
 
         // GET: api/Games/category
         [HttpGet("{category}")]
+        [AllowAnonymous]
         public async Task<ActionResult<ResponseData<ListModel<Game>>>> GetGames(string category)
         {
-            return Ok(await _gameService.GetGameListAsync(category, 1, 3));
+            var response = await _gameService.GetGameListAsync(category, 1, 3);
+            if (response.Success)
+            {
+                return Ok(response);
+            }
+            return NotFound(response);
         }
 
         // GET: api/Games/pageNo
         [HttpGet("page{pageNo}")]
+        [AllowAnonymous]
         public async Task<ActionResult<ResponseData<ListModel<Game>>>> GetGames(int pageNo = 1, int pageSize = 3)
         {
-            return Ok(await _gameService.GetGameListAsync(null, pageNo, pageSize));
+            var response = await _gameService.GetGameListAsync(null, pageNo, pageSize);
+            if (response.Success)
+            {
+                return Ok(response);
+            }
+            return NotFound(response);
         }
 
         // GET: api/Games/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Game>> GetGame(int id)
+        [AllowAnonymous]
+        public async Task<ActionResult<ResponseData<Game>>> GetGame(int id)
         {
-            var games = (await _gameService.GetGameListAsync(null)).Data.Items;
-            if (games == null)
+            var response = await _gameService.GetGameByIdAsync(id);
+            if (response.Success)
             {
-                return NotFound();
+                return Ok(response);
             }
-            var game = (games.FirstOrDefault(m => m.Id == id));
-
-            if (game == null)
-            {
-                return NotFound();
-            }
-
-            return game;
+            return NotFound(response);
         }
 
         // POST: api/Games/5
@@ -87,6 +107,7 @@ namespace Web_153502_Tolstoi.API.Controllers
             var response = await _gameService.SaveImageAsync(id, formFile);
             if (response.Success)
             {
+                return Ok(response);
             }
             return NotFound(response);
         }
@@ -94,30 +115,14 @@ namespace Web_153502_Tolstoi.API.Controllers
         // PUT: api/Games/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutGame(int id, Game game)
+        public async Task<ActionResult<ResponseData<Game>>> PutGame(int id, Game game)
         {
-            if (id != game.Id)
+            var response = await _gameService.UpdateGameAsync(id, game);
+            if (response.Success)
             {
-                return BadRequest();
+                return Ok(response);
             }
-
-            try
-            {
-                await _gameService.UpdateGameAsync(id, game);
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!(await GameExists(id)))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return NoContent();
+            return NotFound(response);
         }
 
         // POST: api/Games
@@ -125,24 +130,24 @@ namespace Web_153502_Tolstoi.API.Controllers
         [HttpPost]
         public async Task<ActionResult<Game>> PostGame(Game game)
         {
-            await _gameService.CreateGameAsync(game);
-
-            return CreatedAtAction("PostGame", new { id = game.Id }, game);
+            var response = await _gameService.CreateGameAsync(game);
+            if (response.Success)
+            {
+                return Ok(response);
+            }
+            return NotFound(response);
         }
 
         // DELETE: api/Games/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteGame(int id)
+        public async Task<ActionResult<ResponseData<bool>>> DeleteGame(int id)
         {
-            var game = await _gameService.GetGameByIdAsync(id);
-            if (game == null)
+            var response = await _gameService.DeleteGameAsync(id);
+            if (response.Success)
             {
-                return NotFound();
+                return Ok(response);
             }
-
-            await _gameService.DeleteGameAsync(id);
-
-            return NoContent();
+            return NotFound(response);
         }
 
         private async Task<bool> GameExists(int id)

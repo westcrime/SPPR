@@ -1,33 +1,53 @@
-﻿
-@*
-    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+﻿﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 
-<a class="navbar-text ms-auto" asp-controller="Cart" asp-action="Index">
-    @await Component.InvokeAsync("Cart") руб <i class="fa-solid fa-cart-shopping"></i> (0)
-</a>
-<div class="dropdown ms-4 nav-color">
-    <button class="btn btn-secondary dropdown-toggle"
-            type="button" id="dropdownMenuButton"
-            data-bs-toggle="dropdown"
-            aria-expanded="false">
-        User@gmail.com
-        <i class="fa-solid fa-user"></i>
-    </button>
-    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <li>    
-            <span class="dropdown-item-text">
-                <i class="fa-solid fa-user"></i>
-                user@gmail.com
-            </span>
-        </li>
-        <li><hr class="dropdown-divider"></li>
-        <li>
-            <form id="logoutForm" class="form-inline">
-                <button id="logout" type="submit" class="nav-link btn btn-link text-dark" asp-controller="Identify" asp-action="LogOut">
-                    Выйти из профиля
-                </button>
-            </form>
-        </li>
-    </ul>
-</div>
+@{
+	var username = User.Claims.FirstOrDefault(c =>
+				c.Type.Equals("Name", StringComparison.OrdinalIgnoreCase))
+				?.Value;
+}
+
+
+
+@if (User.Identity.IsAuthenticated)
+{
+	<a asp-controller="Cart" asp-action="Index" class="navbar-text ms-auto">
+		@await Component.InvokeAsync("Cart")
+	</a>
+	<div class="dropdown ms-4 nav-color">
+		<button class="btn btn-secondary dropdown-toggle"
+				type="button" id="dropdownMenuButton"
+				data-bs-toggle="dropdown"
+				aria-expanded="false">
+			@username
+			<img src="https://localhost:7003/avatar" width="30"
+				 alt="User" class="rounded nav-color" />
+		</button>
+		<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+			<li>
+				<span class="dropdown-item-text">
+					<img src="https://localhost:7003/avatar"
+						 width="50" alt="User" class="rounded" />
+					@username
+				</span>
+			</li>
+			<li><hr class="dropdown-divider"></li>
+			<li>
+				<form method="post" asp-controller="Identity" asp-action="Logout">
+					<button type="submit" class="nav-link btn btn-link">Logout</button>
+				</form>
+			</li>
+		</ul>
+	</div>
+}
+else
+{
+
+	<div class="navbar-textw ms-auto">
+		<button id="login" class="nav-link btn btn-link pull-right" onclick="location.href='@Url.Action("Login", "Identity")'">
+			Login
+		</button>
+
+	</div>
+}

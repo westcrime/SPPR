@@ -23,29 +23,67 @@ namespace Web_153502_Tolstoi.API.Services
 
         public async Task<ResponseData<Game>> CreateGameAsync(Game game)
         {
-            await _context.Database.MigrateAsync();
-            await _context.SaveChangesAsync();
-            await _context.Games.AddAsync(game);
-            await _context.SaveChangesAsync();
-            return new ResponseData<Game>()
+            if (game != null)
             {
-                Success = true,
-                Data = game,
-                ErrorMessage = null
-            };
+                await _context.Database.MigrateAsync();
+                await _context.SaveChangesAsync();
+                await _context.Games.AddAsync(game);
+                await _context.SaveChangesAsync();
+                return new ResponseData<Game>()
+                {
+                    Success = true,
+                    Data = game,
+                    ErrorMessage = null
+                };
+            }
+            else
+            {
+                return new ResponseData<Game>()
+                {
+                    Success = false,
+                    Data = null,
+                    ErrorMessage = "game is null pointer"
+                };
+            }
         }
 
-        public async Task DeleteGameAsync(int id)
+        public async Task<ResponseData<bool>> DeleteGameAsync(int id)
         {
-            await _context.Database.MigrateAsync();
-            await _context.SaveChangesAsync();
-            var game = await _context.Games.FindAsync(id);
-            if (game == null)
+            if (id != 0)
             {
-                throw new Exception("Entity is not found to remove!");
+                var game = await _context.Games.FindAsync(id);
+                if (game != null)
+                {
+                    await _context.Database.MigrateAsync();
+                    await _context.SaveChangesAsync();
+                    _context.Games.Remove(game);
+                    await _context.SaveChangesAsync();
+                    return new ResponseData<bool>()
+                    {
+                        Success = true,
+                        Data = true,
+                        ErrorMessage = String.Empty
+                    };
+                }
+                else
+                {
+                    return new ResponseData<bool>()
+                    {
+                        Success = false,
+                        Data = false,
+                        ErrorMessage = $"game with id {id} is not found"
+                    };
+                }
             }
-            _context.Games.Remove(game);
-            await _context.SaveChangesAsync();
+            else
+            {
+                return new ResponseData<bool>()
+                {
+                    Success = false,
+                    Data = false,
+                    ErrorMessage = "id equals to 0"
+                };
+            }
         }
 
         public async Task<ResponseData<List<Game>>> GetFullGameListAsync()
@@ -126,12 +164,26 @@ namespace Web_153502_Tolstoi.API.Services
 
         public async Task<ResponseData<Game>> GetGameByIdAsync(int id)
         {
+            if (id == 0)
+            {
+                return new ResponseData<Game>()
+                {
+                    Data = null,
+                    Success = false,
+                    ErrorMessage = $"id cant be null (id = {id}"
+                };
+            }
             await _context.Database.MigrateAsync();
             await _context.SaveChangesAsync();
             var game = await _context.Games.FindAsync(id);
             if (game == null)
             {
-                throw new Exception("Entity is not found to remove!");
+                return new ResponseData<Game>()
+                {
+                    Data = null,
+                    Success = false,
+                    ErrorMessage = $"game with {id} is not found"
+                };
             }
             return new ResponseData<Game>()
             {
@@ -178,7 +230,7 @@ namespace Web_153502_Tolstoi.API.Services
             return responseData;
         }
 
-        public async Task UpdateGameAsync(int id, Game game)
+        public async Task<ResponseData<Game>> UpdateGameAsync(int id, Game game)
         {
             await _context.Database.MigrateAsync();
             await _context.SaveChangesAsync();
@@ -191,10 +243,21 @@ namespace Web_153502_Tolstoi.API.Services
                 gameToUpdate.CategoryId = game.CategoryId;
                 _context.Games.Update(gameToUpdate);
                 await _context.SaveChangesAsync();
+                return new ResponseData<Game>()
+                {
+                    Data = game,
+                    Success = true,
+                    ErrorMessage = String.Empty
+                };
             }
             else
             {
-                throw new Exception("Entity to update not found!");
+                return new ResponseData<Game>()
+                {
+                    Data = null,
+                    Success = false,
+                    ErrorMessage = $"cant find a game to update with id = {id}"
+                };
             }
         }
     }

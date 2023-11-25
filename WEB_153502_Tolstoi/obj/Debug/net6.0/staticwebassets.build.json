@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "GZW7v24vfN7WjAFwx3UhJzFAGgsvy42PNCsbn1iBgtw=",
+  "Hash": "39DA1T16aJUG6xmef7VAiUkQl4RFJFsMRkxKJPEe1JM=",
   "Source": "WEB_153502_Tolstoi",
   "BasePath": "_content/WEB_153502_Tolstoi",
   "Mode": "Default",
@@ -36,23 +36,6 @@
   ],
   "Assets": [
     {
-      "Identity": "C:\\bsuir\\SPPR\\Web_153502_Tolstoi.API\\wwwroot\\Images\\dota.jpg",
-      "SourceId": "Web_153502_Tolstoi.API",
-      "SourceType": "Project",
-      "ContentRoot": "C:\\bsuir\\SPPR\\Web_153502_Tolstoi.API\\wwwroot\\",
-      "BasePath": "_content/Web_153502_Tolstoi.API",
-      "RelativePath": "Images/dota.jpg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Images\\dota.jpg"
-    },
-    {
       "Identity": "C:\\bsuir\\SPPR\\Web_153502_Tolstoi.API\\wwwroot\\Images\\factorio.jpg",
       "SourceId": "Web_153502_Tolstoi.API",
       "SourceType": "Project",
@@ -87,6 +70,23 @@
       "OriginalItemSpec": "wwwroot\\Images\\fifa23.jpg"
     },
     {
+      "Identity": "C:\\bsuir\\SPPR\\Web_153502_Tolstoi.API\\wwwroot\\Images\\hd41pn4s.jpg",
+      "SourceId": "Web_153502_Tolstoi.API",
+      "SourceType": "Project",
+      "ContentRoot": "C:\\bsuir\\SPPR\\Web_153502_Tolstoi.API\\wwwroot\\",
+      "BasePath": "_content/Web_153502_Tolstoi.API",
+      "RelativePath": "Images/hd41pn4s.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\hd41pn4s.jpg"
+    },
+    {
       "Identity": "C:\\bsuir\\SPPR\\Web_153502_Tolstoi.API\\wwwroot\\Images\\kwf5dgwq.jpg",
       "SourceId": "Web_153502_Tolstoi.API",
       "SourceType": "Project",
@@ -104,6 +104,23 @@
       "OriginalItemSpec": "wwwroot\\Images\\kwf5dgwq.jpg"
     },
     {
+      "Identity": "C:\\bsuir\\SPPR\\Web_153502_Tolstoi.API\\wwwroot\\Images\\q5zoau4l.jpg",
+      "SourceId": "Web_153502_Tolstoi.API",
+      "SourceType": "Project",
+      "ContentRoot": "C:\\bsuir\\SPPR\\Web_153502_Tolstoi.API\\wwwroot\\",
+      "BasePath": "_content/Web_153502_Tolstoi.API",
+      "RelativePath": "Images/q5zoau4l.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\q5zoau4l.jpg"
+    },
+    {
       "Identity": "C:\\bsuir\\SPPR\\Web_153502_Tolstoi.API\\wwwroot\\Images\\starcraft2.jpg",
       "SourceId": "Web_153502_Tolstoi.API",
       "SourceType": "Project",
@@ -119,6 +136,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Images\\starcraft2.jpg"
+    },
+    {
+      "Identity": "C:\\bsuir\\SPPR\\Web_153502_Tolstoi.API\\wwwroot\\Images\\thgvtkxu.jpg",
+      "SourceId": "Web_153502_Tolstoi.API",
+      "SourceType": "Project",
+      "ContentRoot": "C:\\bsuir\\SPPR\\Web_153502_Tolstoi.API\\wwwroot\\",
+      "BasePath": "_content/Web_153502_Tolstoi.API",
+      "RelativePath": "Images/thgvtkxu.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\thgvtkxu.jpg"
     },
     {
       "Identity": "C:\\bsuir\\SPPR\\WEB_153502_Tolstoi\\obj\\Debug\\net6.0\\scopedcss\\bundle\\WEB_153502_Tolstoi.styles.css",

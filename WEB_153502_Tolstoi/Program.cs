@@ -20,6 +20,35 @@ builder.Services
 builder.Services
     .AddHttpClient<IGameService, ApiGameService>();
 
+builder.Services.AddAuthentication(opt =>
+{
+    opt.DefaultScheme = "cookie";
+    opt.DefaultChallengeScheme = "oidc";
+})
+.AddCookie("cookie")
+.AddOpenIdConnect("oidc", options =>
+{
+    options.Authority =
+    builder.Configuration["InteractiveServiceSettings:AuthorityUrl"];
+    options.ClientId =
+    builder.Configuration["InteractiveServiceSettings:ClientId"];
+    options.ClientSecret =
+    builder.Configuration["InteractiveServiceSettings:ClientSecret"];
+    // Получить Claims пользователя
+    options.GetClaimsFromUserInfoEndpoint = true;
+    options.ResponseType = "code";
+    options.ResponseMode = "query";
+    options.SaveTokens = true;
+});
+
+var uriData = builder.Configuration.GetSection("UriData").Get<UriData>();
+
+builder.Services.AddRazorPages();
+builder.Services.AddHttpContextAccessor();
+
+builder.Services.AddDistributedMemoryCache();
+builder.Services.AddSession();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -30,16 +59,23 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
+app.UseRouting();
+
+app.MapRazorPages();
+app.MapRazorPages().RequireAuthorization();
+
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
-app.UseRouting();
-
+app.UseAuthentication();
 app.UseAuthorization();
+
+app.UseSession();
+
 app.MapAreaControllerRoute(
     name: "Admin_area",
     areaName: "Admin",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{action=Index}/{id?}");
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
