@@ -9,6 +9,8 @@ using WEB_153502_Tolstoi.Services.Api.Services;
 using Microsoft.Extensions.DependencyInjection;
 using Web_153502_Tolstoi.API.Services;
 using Microsoft.AspNetCore.Builder;
+using Web_153502_Tolstoi.Domain.Entities;
+using WEB_153502_Tolstoi.Services.CartServices;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -44,6 +46,8 @@ builder.Services.AddAuthentication(opt =>
 var uriData = builder.Configuration.GetSection("UriData").Get<UriData>();
 
 builder.Services.AddRazorPages();
+
+builder.Services.AddScoped<Cart>(sp => SessionCart.GetCart(sp));
 builder.Services.AddHttpContextAccessor();
 
 builder.Services.AddDistributedMemoryCache();

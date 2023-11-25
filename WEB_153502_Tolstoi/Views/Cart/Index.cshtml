@@ -1,0 +1,56 @@
+﻿@model Dictionary<int,CartItem>
+
+@if(Model.Count!=0){
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    Poster
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Values.First().Item.Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Values.First().Item.Description)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Values.First().Item.Price)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Values.First().Count)
+                </th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Values)
+            {
+                <tr>
+                    <td>
+                        <img src="@item.Item.Image" width="300" height="200" />
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Item.Description)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Item.Price)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Count)
+                    </td>
+                    <td>
+                        <a asp-controller="Cart" asp-action="Remove" asp-route-id="@item.Item.Id">Remove</a>
+                    </td>
+                </tr>
+
+            }
+        </tbody>
+        
+    </table>
+    <a asp-controller="Cart" asp-action="Clear">Clear</a>
+}else{
+    <h1>Корзина пуста</h1>
+}

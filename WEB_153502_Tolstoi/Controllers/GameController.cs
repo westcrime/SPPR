@@ -21,7 +21,8 @@ namespace WEB_153502_Tolstoi.Controllers
             _categoryService = catService;
         }
 
-        public async Task<IActionResult> Index(string? category = "", int pageNo = 1)
+        [Route("Catalog/{category=all}/{pageNo=1}")]
+        public async Task<IActionResult> Index(string? category = "all", int pageNo = 1)
         {
 
             var gameResponse = new ResponseData<ListModel<Game>>();
@@ -29,7 +30,7 @@ namespace WEB_153502_Tolstoi.Controllers
             var categories = (await _categoryService.GetCategoryListAsync()).Data;
             ViewBag.Categories = categories;
 
-            if (category != string.Empty) 
+            if (category != "all") 
             {
                 gameResponse = await _gameService.GetGameListAsync(category, pageNo);
                 if (!gameResponse.Success)
