@@ -1,0 +1,48 @@
+﻿@page "/games"
+@page "/games/{category}"
+@using System.Text.RegularExpressions;
+@using Web_153502_Tolstoi.BlazorWasm.Services;
+@using Web_153502_Tolstoi.Domain.Entities;
+
+@attribute [Authorize]
+@inject IDataService dataService;
+
+<CategorySelector SelectedCategory="@SelectedName" />
+<GameCatalog GameSelected="@FindGame"/>
+<Pagination Category="@category" />
+<GameDetails SelectedBook="@SelectedGame"/>
+
+@code {
+	[Parameter]
+	public string? category { get; set; }
+	public string? SelectedName { get; set; }
+	[Parameter]
+	public Game? SelectedGame { get; set; }
+
+	string ConvertDashToCamelCase(string input) =>
+	Regex.Replace(input, "-.", m => " " + m.Value.Substring(1));
+
+	protected override async Task OnInitializedAsync()
+	{
+		await dataService.GetCategoryListAsync();
+
+		if (category == null)
+		{
+			category = "all";
+		}
+
+	}
+
+	protected override async Task OnParametersSetAsync()
+	{
+
+		SelectedName = ConvertDashToCamelCase(category!);
+		await dataService.GetProductListAsync(category);
+	}
+
+	public async void FindGame(int id)
+	{
+		SelectedGame = dataService.Games.First(b => b.Id == id);
+		await InvokeAsync(StateHasChanged);
+	}
+}

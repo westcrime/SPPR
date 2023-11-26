@@ -1,0 +1,53 @@
+﻿@inject Web_153502_Tolstoi.BlazorWasm.Services.IDataService DataService
+@implements IDisposable
+
+@if (DataService.Games == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>CategoryId</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var game in DataService.Games)
+            {
+                <tr>
+                    <td>@game.Name</td>
+                    <td>@game.Description</td>
+                    <td>@game.CategoryId</td>
+                    <td><button type="button" class="btn btn-primary" @onclick="()=>GameSelected?.Invoke(game.Id)">Details</button></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+
+
+}
+
+
+
+@code {
+    public delegate void Meth(int id);
+
+    [Parameter]
+    public Meth? GameSelected { get; set; }
+
+	protected override void OnInitialized()
+	{
+		DataService.DataLoaded += StateHasChanged;
+
+	}
+	public void Dispose()
+	{
+		DataService.DataLoaded -= StateHasChanged;
+	}
+}

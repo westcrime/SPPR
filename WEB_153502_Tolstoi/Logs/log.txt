@@ -69,3 +69,11 @@ Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: Cannot implicitly convert
 2023-11-26 15:33:31.692 +03:00 [INF] HTTP GET /1 responded 404 in 0.7261 ms
 2023-11-26 15:33:39.243 +03:00 [INF] HTTP POST /Admin/Delete responded 302 in 1837.9030 ms
 2023-11-26 15:33:50.573 +03:00 [INF] HTTP GET /Cart/add/2 responded 302 in 288.1787 ms
+2023-11-26 15:44:52.208 +03:00 [INF] HTTP POST /Identity/Logout responded 302 in 8183.4483 ms
+2023-11-26 15:48:46.555 +03:00 [INF] HTTP GET /Identity/Login responded 302 in 1391.6759 ms
+2023-11-26 15:48:49.016 +03:00 [INF] HTTP GET /signin-oidc responded 302 in 1681.6593 ms
+2023-11-26 15:48:51.728 +03:00 [INF] HTTP POST /Identity/Logout responded 302 in 22.0153 ms
+2023-11-26 15:53:25.964 +03:00 [INF] HTTP GET /Identity/Login responded 302 in 959.7122 ms
+2023-11-26 15:53:28.202 +03:00 [INF] HTTP GET /signin-oidc responded 302 in 1571.3103 ms
+2023-11-26 17:04:07.108 +03:00 [INF] HTTP GET /js/site.js responded 304 in 121.8863 ms
+2023-11-26 17:16:47.993 +03:00 [INF] HTTP POST /Identity/Logout responded 302 in 1041.0433 ms

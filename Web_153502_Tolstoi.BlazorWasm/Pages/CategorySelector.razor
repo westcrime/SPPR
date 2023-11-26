@@ -1,0 +1,34 @@
+﻿@using Web_153502_Tolstoi.BlazorWasm.Services;
+@using Web_153502_Tolstoi.Domain.Entities;
+﻿
+@inject IDataService dataService;
+
+
+<!-- Выбор жанра -->
+@if (dataService.Categorys != null)
+{
+	<div class="dropdown">
+		<a class="btn btn-secondary dropdown-toggle" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+			@SelectedCategory
+		</a>
+
+		<ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+			<li><a class="dropdown-item" href="/games/all">All</a></li>
+			@foreach (var category in dataService.Categorys)
+			{
+				<li><a class="dropdown-item" href="/games/@category?.NormalizedName">@category?.Name</a></li>
+			}
+		</ul>
+	</div>
+}
+
+
+@code {
+
+	[Parameter]
+	public string? SelectedCategory { get; set; }
+	protected override async Task OnInitializedAsync()
+	{
+		await dataService.GetCategoryListAsync();
+	}
+}

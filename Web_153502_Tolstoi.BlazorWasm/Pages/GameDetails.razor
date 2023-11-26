@@ -1,0 +1,31 @@
+﻿@if (SelectedGame != null)
+{
+	<!-- Карточки -->
+	<div class="row">
+
+		<div class="col-md-4 g-5">
+			<div class="card" style="width: 18rem;">
+				<img src="@SelectedGame.Image" class="card-img-top" alt="...">
+
+				<div class="card-body">
+					<h5 class="card-title">@SelectedGame.Name</h5>
+					<p class="card-text">@SelectedGame.Description</p>
+					<small class="card-text">Цена: @SelectedGame.Price</small>
+					<div class="row">
+						<div class="col-md-4"></div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+}
+
+
+
+@code {
+	[Parameter]
+	public Web_153502_Tolstoi.Domain.Entities.Game? SelectedGame { get; set; }
+
+}
