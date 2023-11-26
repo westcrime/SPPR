@@ -98,7 +98,7 @@ namespace Web_153502_Tolstoi.API.Services
         }
 
 
-        public async Task<ResponseData<ListModel<Game>>> GetGameListAsync(string? categoryNormalizedName = "all", int pageNo = 1, int pageSize = 3)
+        public async Task<ResponseData<ListModel<Game>>> GetGameListAsync(string categoryNormalizedName = "all", int pageNo = 1, int pageSize = 3)
         {
             if (pageSize > _maxPageSize)
                 pageSize = _maxPageSize;

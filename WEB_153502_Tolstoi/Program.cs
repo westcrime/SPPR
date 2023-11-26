@@ -1,7 +1,4 @@
-using Microsoft.EntityFrameworkCore;
-using System.Configuration;
-using Web_153502_Tolstoi.API.Data;
-using Microsoft.Extensions.Configuration;
+using WEB_153502_Tolstoi.Logs;
 using WEB_153502_Tolstoi.Services.ApiData;
 using System.Text.Json;
 using System.Text.Json.Serialization;
@@ -11,6 +8,9 @@ using Web_153502_Tolstoi.API.Services;
 using Microsoft.AspNetCore.Builder;
 using Web_153502_Tolstoi.Domain.Entities;
 using WEB_153502_Tolstoi.Services.CartServices;
+using Serilog;
+using Serilog.Events;
+using Microsoft.IdentityModel.Logging;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -53,7 +53,17 @@ builder.Services.AddHttpContextAccessor();
 builder.Services.AddDistributedMemoryCache();
 builder.Services.AddSession();
 
+Log.Logger = new LoggerConfiguration().ReadFrom.Configuration(builder.Configuration).MinimumLevel.Override("Microsoft", LogEventLevel.Warning)
+    .MinimumLevel.Override("System", LogEventLevel.Warning).CreateLogger();
+
+builder.Host.UseSerilog();
+
 var app = builder.Build();
+
+app.UseSerilogRequestLogging(opts =>
+{
+    opts.GetLevel = WEB_153502_Tolstoi.Logs.LogHelper.ExcludeHealthChecks;
+});
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())

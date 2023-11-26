@@ -137,16 +137,13 @@ namespace WEB_153502_Tolstoi.Services.Api.Services
         }
 
         [AllowAnonymous]
-        public async Task<ResponseData<ListModel<Game>>> GetGameListAsync(string? categoryNormalizedName = null, int pageNo = 1, int pageSize = 3)
+        public async Task<ResponseData<ListModel<Game>>> GetGameListAsync(string categoryNormalizedName = "all", int pageNo = 1, int pageSize = 3)
         {
             // подготовка URL запроса
             var urlString = new StringBuilder($"{_httpClient.BaseAddress.AbsoluteUri}Games/");
             // добавить категорию в маршрут
-            if (categoryNormalizedName != null)
-            {
-                urlString.Append($"{categoryNormalizedName}/");
-            };
-            urlString.Append($"page{pageNo}");
+            urlString.Append($"{categoryNormalizedName}/");
+            urlString.Append($"page{pageNo}/");
             // добавить размер страницы в строку запроса
             if (!_pageSize.Equals("3"))
             {

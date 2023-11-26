@@ -612,3 +612,17 @@ C:\bsuir\SPPR\WEB_153502_Tolstoi\bin\Debug\net6.0\Microsoft.AspNetCore.Authentic
 C:\bsuir\SPPR\WEB_153502_Tolstoi\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.OpenIdConnect.dll
 C:\bsuir\SPPR\WEB_153502_Tolstoi\bin\Debug\net6.0\packages\Microsoft.AspNetCore.Razor.Design.2.2.0\tools\rzc.deps.json
 C:\bsuir\SPPR\WEB_153502_Tolstoi\bin\Debug\net6.0\packages\Microsoft.AspNetCore.Razor.Design.2.2.0\tools\rzc.runtimeconfig.json
+C:\bsuir\SPPR\WEB_153502_Tolstoi\bin\Debug\net6.0\Microsoft.Extensions.Configuration.Binder.dll
+C:\bsuir\SPPR\WEB_153502_Tolstoi\bin\Debug\net6.0\Microsoft.Extensions.Diagnostics.Abstractions.dll
+C:\bsuir\SPPR\WEB_153502_Tolstoi\bin\Debug\net6.0\Microsoft.Extensions.FileProviders.Abstractions.dll
+C:\bsuir\SPPR\WEB_153502_Tolstoi\bin\Debug\net6.0\Microsoft.Extensions.Hosting.Abstractions.dll
+C:\bsuir\SPPR\WEB_153502_Tolstoi\bin\Debug\net6.0\Serilog.dll
+C:\bsuir\SPPR\WEB_153502_Tolstoi\bin\Debug\net6.0\Serilog.AspNetCore.dll
+C:\bsuir\SPPR\WEB_153502_Tolstoi\bin\Debug\net6.0\Serilog.Extensions.Hosting.dll
+C:\bsuir\SPPR\WEB_153502_Tolstoi\bin\Debug\net6.0\Serilog.Extensions.Logging.dll
+C:\bsuir\SPPR\WEB_153502_Tolstoi\bin\Debug\net6.0\Serilog.Formatting.Compact.dll
+C:\bsuir\SPPR\WEB_153502_Tolstoi\bin\Debug\net6.0\Serilog.Settings.Configuration.dll
+C:\bsuir\SPPR\WEB_153502_Tolstoi\bin\Debug\net6.0\Serilog.Sinks.Console.dll
+C:\bsuir\SPPR\WEB_153502_Tolstoi\bin\Debug\net6.0\Serilog.Sinks.Debug.dll
+C:\bsuir\SPPR\WEB_153502_Tolstoi\bin\Debug\net6.0\Serilog.Sinks.File.dll
+C:\bsuir\SPPR\WEB_153502_Tolstoi\bin\Debug\net6.0\System.Diagnostics.DiagnosticSource.dll

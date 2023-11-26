@@ -48,7 +48,7 @@ namespace Web_153502_Tolstoi.API.Controllers
         }
 
         // GET: api/Games/category/pageNo
-        [HttpGet("{category}/page{pageNo}")]
+        [HttpGet("{category=all}/page{pageNo=1}/{pageSize=3}")]
         [AllowAnonymous]
         public async Task<ActionResult<ResponseData<ListModel<Game>>>> GetGames(string category, int pageNo = 1, int pageSize = 3)
         {

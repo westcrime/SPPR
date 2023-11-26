@@ -21,8 +21,8 @@ namespace WEB_153502_Tolstoi.Controllers
             _categoryService = catService;
         }
 
-        [Route("Catalog/{category=all}/{pageNo=1}")]
-        public async Task<IActionResult> Index(string? category = "all", int pageNo = 1)
+        [Route("Catalog/{category=all}/page{pageNo=1}/{pageSize=3}")]
+        public async Task<IActionResult> Index(string? category = "all", int pageNo = 1, int pageSize = 3)
         {
 
             var gameResponse = new ResponseData<ListModel<Game>>();
@@ -33,21 +33,12 @@ namespace WEB_153502_Tolstoi.Controllers
                 return NotFound(categoryResponse.ErrorMessage);
             }
 
-            ViewBag.Categories = categoryResponse.Data;
-            if (category != "all") 
-            {
-                gameResponse = await _gameService.GetGameListAsync(category, pageNo);
-                if (!gameResponse.Success)
-                    return NotFound(gameResponse.ErrorMessage);
-
-                ViewData["currentCategory"] = category;
-                return View(gameResponse.Data);
-                //return View(gameResponse.Data.Items.Where(game => game.CategoryId == categories.Find(cat => cat.NormalizedName == category).Id));
-            }
-
-            gameResponse = await _gameService.GetGameListAsync(null, pageNo);
+            ViewBag.Categories = categoryResponse.Data.Items.ToList();
+            gameResponse = await _gameService.GetGameListAsync(category, pageNo, pageSize);
             if (!gameResponse.Success)
                 return NotFound(gameResponse.ErrorMessage);
+
+            ViewData["currentCategory"] = category;
 
             if (Request.IsAjaxRequest())
             {

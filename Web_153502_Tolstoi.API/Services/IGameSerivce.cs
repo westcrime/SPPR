@@ -13,7 +13,7 @@ namespace Web_153502_Tolstoi.API.Services
         /// <param name="pageNo">номер страницы списка</param>
         /// <param name="pageSize">количество объектов на странице</param>
         /// <returns></returns>
-        public Task<ResponseData<ListModel<Game>>> GetGameListAsync(string? categoryNormalizedName, int pageNo = 1, int pageSize = 3);
+        public Task<ResponseData<ListModel<Game>>> GetGameListAsync(string categoryNormalizedName = "all", int pageNo = 1, int pageSize = 3);
         /// <summary>
         /// Получение полного списка всех объектов
         /// </summary>

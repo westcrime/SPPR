@@ -382,3 +382,17 @@ C:\bsuir\SPPR\Web_153502_Tolstoi.Tests\obj\Debug\net6.0\refint\Web_153502_Tolsto
 C:\bsuir\SPPR\Web_153502_Tolstoi.Tests\obj\Debug\net6.0\Web_153502_Tolstoi.Tests.pdb
 C:\bsuir\SPPR\Web_153502_Tolstoi.Tests\obj\Debug\net6.0\Web_153502_Tolstoi.Tests.genruntimeconfig.cache
 C:\bsuir\SPPR\Web_153502_Tolstoi.Tests\obj\Debug\net6.0\ref\Web_153502_Tolstoi.Tests.dll
+C:\bsuir\SPPR\Web_153502_Tolstoi.Tests\bin\Debug\net6.0\Microsoft.Extensions.Configuration.Binder.dll
+C:\bsuir\SPPR\Web_153502_Tolstoi.Tests\bin\Debug\net6.0\Microsoft.Extensions.Diagnostics.Abstractions.dll
+C:\bsuir\SPPR\Web_153502_Tolstoi.Tests\bin\Debug\net6.0\Microsoft.Extensions.FileProviders.Abstractions.dll
+C:\bsuir\SPPR\Web_153502_Tolstoi.Tests\bin\Debug\net6.0\Microsoft.Extensions.Hosting.Abstractions.dll
+C:\bsuir\SPPR\Web_153502_Tolstoi.Tests\bin\Debug\net6.0\Serilog.dll
+C:\bsuir\SPPR\Web_153502_Tolstoi.Tests\bin\Debug\net6.0\Serilog.AspNetCore.dll
+C:\bsuir\SPPR\Web_153502_Tolstoi.Tests\bin\Debug\net6.0\Serilog.Extensions.Hosting.dll
+C:\bsuir\SPPR\Web_153502_Tolstoi.Tests\bin\Debug\net6.0\Serilog.Extensions.Logging.dll
+C:\bsuir\SPPR\Web_153502_Tolstoi.Tests\bin\Debug\net6.0\Serilog.Formatting.Compact.dll
+C:\bsuir\SPPR\Web_153502_Tolstoi.Tests\bin\Debug\net6.0\Serilog.Settings.Configuration.dll
+C:\bsuir\SPPR\Web_153502_Tolstoi.Tests\bin\Debug\net6.0\Serilog.Sinks.Console.dll
+C:\bsuir\SPPR\Web_153502_Tolstoi.Tests\bin\Debug\net6.0\Serilog.Sinks.Debug.dll
+C:\bsuir\SPPR\Web_153502_Tolstoi.Tests\bin\Debug\net6.0\Serilog.Sinks.File.dll
+C:\bsuir\SPPR\Web_153502_Tolstoi.Tests\bin\Debug\net6.0\System.Diagnostics.DiagnosticSource.dll
