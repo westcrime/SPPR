@@ -27,9 +27,13 @@ namespace WEB_153502_Tolstoi.Controllers
 
             var gameResponse = new ResponseData<ListModel<Game>>();
 
-            var categories = (await _categoryService.GetCategoryListAsync()).Data;
-            ViewBag.Categories = categories;
+            var categoryResponse = await _categoryService.GetCategoryListAsync();
+            if (categoryResponse.Success != true) 
+            {
+                return NotFound(categoryResponse.ErrorMessage);
+            }
 
+            ViewBag.Categories = categoryResponse.Data;
             if (category != "all") 
             {
                 gameResponse = await _gameService.GetGameListAsync(category, pageNo);

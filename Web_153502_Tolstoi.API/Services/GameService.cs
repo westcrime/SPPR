@@ -42,7 +42,7 @@ namespace Web_153502_Tolstoi.API.Services
                 {
                     Success = false,
                     Data = null,
-                    ErrorMessage = "game is null pointer"
+                    ErrorMessage = "Error! Game is null pointer"
                 };
             }
         }
@@ -71,7 +71,7 @@ namespace Web_153502_Tolstoi.API.Services
                     {
                         Success = false,
                         Data = false,
-                        ErrorMessage = $"game with id {id} is not found"
+                        ErrorMessage = $"Error! Game with id {id} is not found"
                     };
                 }
             }
@@ -81,7 +81,7 @@ namespace Web_153502_Tolstoi.API.Services
                 {
                     Success = false,
                     Data = false,
-                    ErrorMessage = "id equals to 0"
+                    ErrorMessage = "Error! Id equals to 0"
                 };
             }
         }
@@ -98,20 +98,20 @@ namespace Web_153502_Tolstoi.API.Services
         }
 
 
-        public async Task<ResponseData<ListModel<Game>>> GetGameListAsync(string? categoryNormalizedName, int pageNo = 1, int pageSize = 3)
+        public async Task<ResponseData<ListModel<Game>>> GetGameListAsync(string? categoryNormalizedName = "all", int pageNo = 1, int pageSize = 3)
         {
             if (pageSize > _maxPageSize)
                 pageSize = _maxPageSize;
             var _games = await _context.Games.ToListAsync();
             var _categories = await _context.Categories.ToListAsync();
-            if (categoryNormalizedName != null)
+            if (categoryNormalizedName != "all")
             {
                 if (_categories.FindAll(c => c.NormalizedName == categoryNormalizedName).Count == 0)
                     return new ResponseData<ListModel<Game>>
                     {
                         Data = null,
                         Success = false,
-                        ErrorMessage = "No such category"
+                        ErrorMessage = "Error! No such category"
                     };
                 var totalPages = (int)Math.Ceiling((double)_games.Where(game => game.CategoryId == _categories.Find(c => c.NormalizedName.Equals(categoryNormalizedName)).Id).ToList().Count / pageSize);
                 if (pageNo > totalPages)
@@ -119,7 +119,7 @@ namespace Web_153502_Tolstoi.API.Services
                     {
                         Data = null,
                         Success = false,
-                        ErrorMessage = "No such page"
+                        ErrorMessage = "Error! No such page"
                     };
                 Console.WriteLine(new ResponseData<ListModel<Game>>
                 {
@@ -148,7 +148,7 @@ namespace Web_153502_Tolstoi.API.Services
                     {
                         Data = null,
                         Success = false,
-                        ErrorMessage = "No such page"
+                        ErrorMessage = "Error! No such page"
                     };
                 return new ResponseData<ListModel<Game>>
                 {

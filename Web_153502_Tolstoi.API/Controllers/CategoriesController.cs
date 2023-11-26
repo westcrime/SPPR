@@ -26,7 +26,12 @@ namespace Web_153502_Tolstoi.API.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Category>>> GetCategories()
         {
-            return Ok(await _categoryService.GetCategoryListAsync());
+            var response = await _categoryService.GetCategoryListAsync();
+            if (response.Success)
+            {
+                return Ok(response);
+            }
+            return NotFound(response);
         }
 
         //// GET: api/Categories/5

@@ -37,7 +37,7 @@ namespace Web_153502_Tolstoi.API.Controllers
         // GET: api/Games
         [HttpGet()]
         [AllowAnonymous]
-        public async Task<ActionResult<ResponseData<ListModel<Game>>>> GetGames()
+        public async Task<ActionResult<ResponseData<ListModel<Game>>>> GetGames()   
         {
             var response = await _gameService.GetFullGameListAsync();
             if (response.Success)

@@ -8,11 +8,25 @@ namespace Web_153502_Tolstoi.API.Services
     {
         AppDbContext _context;
         public CategoryService(AppDbContext context) => _context = context;
-        public Task<ResponseData<List<Category>>> GetCategoryListAsync()
+        public Task<ResponseData<ListModel<Category>>> GetCategoryListAsync()
         {
-            return Task.FromResult(new ResponseData<List<Category>>
+            if (_context.Categories == null)
             {
-                Data = _context.Categories.ToList()
+                return Task.FromResult(new ResponseData<ListModel<Category>>
+                {
+                    Success = false,
+                    Data = null,
+                    ErrorMessage = "Error! Categories list is null"
+                });
+            }
+            return Task.FromResult(new ResponseData<ListModel<Category>>
+            {
+               Success = true,
+               Data = new ListModel<Category>()
+               {
+                   Items = _context.Categories.ToList()
+               },
+               ErrorMessage = string.Empty
             });
         }
     }

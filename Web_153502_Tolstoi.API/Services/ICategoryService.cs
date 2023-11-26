@@ -9,6 +9,6 @@ namespace Web_153502_Tolstoi.API.Services
         /// Получение списка всех категорий
         /// </summary>
         /// <returns></returns>
-        public Task<ResponseData<List<Category>>> GetCategoryListAsync();
+        public Task<ResponseData<ListModel<Category>>> GetCategoryListAsync();
     }
 }

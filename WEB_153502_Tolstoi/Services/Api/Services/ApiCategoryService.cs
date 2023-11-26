@@ -27,7 +27,7 @@ namespace WEB_153502_Tolstoi.Services.Api.Services
             };
             _logger = logger;
         }
-        public async Task<ResponseData<List<Category>>> GetCategoryListAsync()
+        public async Task<ResponseData<ListModel<Category>>> GetCategoryListAsync()
         {
             // подготовка URL запроса
             var urlString = new StringBuilder($"{_httpClient.BaseAddress.AbsoluteUri}Categories/");
@@ -37,12 +37,12 @@ namespace WEB_153502_Tolstoi.Services.Api.Services
             {
                 try
                 {
-                    return await response.Content.ReadFromJsonAsync<ResponseData<List<Category>>>();
+                    return await response.Content.ReadFromJsonAsync<ResponseData<ListModel<Category>>>();
                 }
                 catch (JsonException ex)
                 {
                     _logger.LogError($"-----> Ошибка: {ex.Message}");
-                    return new ResponseData<List<Category>>
+                    return new ResponseData<ListModel<Category>>
                     {
                         Success = false,
                         ErrorMessage = $"Ошибка: {ex.Message}"
@@ -50,7 +50,7 @@ namespace WEB_153502_Tolstoi.Services.Api.Services
                 }
             }
             _logger.LogError($"-----> Данные не получены от сервера. Error:{response.StatusCode}");
-            return new ResponseData<List<Category>>
+            return new ResponseData<ListModel<Category>>
             {
                 Success = false,
                 ErrorMessage = $"Данные не получены от сервера. Error: {response.StatusCode}"

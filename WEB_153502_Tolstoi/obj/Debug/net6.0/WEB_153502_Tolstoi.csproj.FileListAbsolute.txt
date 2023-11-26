@@ -610,3 +610,5 @@ C:\bsuir\SPPR\WEB_153502_Tolstoi\obj\Debug\net6.0\WEB_153502_Tolstoi.genruntimec
 C:\bsuir\SPPR\WEB_153502_Tolstoi\obj\Debug\net6.0\ref\WEB_153502_Tolstoi.dll
 C:\bsuir\SPPR\WEB_153502_Tolstoi\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\bsuir\SPPR\WEB_153502_Tolstoi\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.OpenIdConnect.dll
+C:\bsuir\SPPR\WEB_153502_Tolstoi\bin\Debug\net6.0\packages\Microsoft.AspNetCore.Razor.Design.2.2.0\tools\rzc.deps.json
+C:\bsuir\SPPR\WEB_153502_Tolstoi\bin\Debug\net6.0\packages\Microsoft.AspNetCore.Razor.Design.2.2.0\tools\rzc.runtimeconfig.json
