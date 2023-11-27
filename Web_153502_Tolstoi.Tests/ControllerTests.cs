@@ -84,8 +84,8 @@ namespace Web_153502_Tolstoi.Tests
 
             // Assert
             Assert.IsType<ViewResult>(result);
-            Assert.Equal(categoryData.Result.Data, (result as ViewResult).ViewData["Categories"]);
-            Assert.Equal(null, (result as ViewResult).ViewData["currentCategory"]);
+            Assert.Equal(categoryData.Result.Data.Items, (result as ViewResult).ViewData["Categories"]);
+            Assert.Equal("all", (result as ViewResult).ViewData["currentCategory"]);
             Assert.Equal(gameData.Result.Data, (result as ViewResult).Model);
         }
 

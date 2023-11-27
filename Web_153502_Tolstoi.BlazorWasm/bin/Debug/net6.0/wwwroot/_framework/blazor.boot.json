@@ -219,14 +219,14 @@
       "netstandard.dll": "sha256-87jtKWKXMg3nXj8D1mLQabI+cTWOPvy5ll3sBYj\/ZhI=",
       "System.Private.CoreLib.dll": "sha256-gjd6M5pA\/nOZEI8pvs9SPUAFG1Jppwr9Xl6v7Wab8Fc=",
       "Web_153502_Tolstoi.Domain.dll": "sha256-sJGT4guLo5i1tsx57Z1UrXSkg7Lgrz21uUH4keFM3Y4=",
-      "Web_153502_Tolstoi.BlazorWasm.dll": "sha256-p3+CSseTrDKUTR6CS0y65ziygXImFdd91hFzB1tLGNo="
+      "Web_153502_Tolstoi.BlazorWasm.dll": "sha256-MFZ6JoCYbZ08aQOiVADIvVf2fQb7RZNSTwDczRwz4+M="
     },
     "extensions": null,
     "lazyAssembly": null,
     "libraryInitializers": null,
     "pdb": {
       "Web_153502_Tolstoi.Domain.pdb": "sha256-0005a\/id\/GUVo5giKexoMYsyNb\/e4SuCM3IH0bjVJec=",
-      "Web_153502_Tolstoi.BlazorWasm.pdb": "sha256-1G1AbrB\/sriy5NxmsOBFydKDE4wwZQCWZH09Kn1ZqmQ="
+      "Web_153502_Tolstoi.BlazorWasm.pdb": "sha256-\/N2ngP7MA\/z6UeglQW4+UWAZyHqJAPPF62Tvig3Pupw="
     },
     "runtime": {
       "dotnet.6.0.23.8t61jgjgdz.js": "sha256-YYG9NE7FnTlr1qMbQzBTzUGZOcLX64xP2Z1+An1jT6U=",
