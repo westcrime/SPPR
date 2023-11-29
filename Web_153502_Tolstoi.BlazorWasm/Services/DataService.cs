@@ -34,7 +34,7 @@ namespace Web_153502_Tolstoi.BlazorWasm.Services
 
         public async Task GetCategoryListAsync()
         {
-            var httpResponse = await _httpClient.GetAsync("Category");
+            var httpResponse = await _httpClient.GetAsync("Categories");
             var response = await httpResponse.Content.ReadFromJsonAsync<ResponseData<ListModel<Category>>>();
             Success = response.Success;
             ErrorMessage = response.ErrorMessage;
@@ -47,7 +47,7 @@ namespace Web_153502_Tolstoi.BlazorWasm.Services
 
         public async Task<ResponseData<Game>> GetProductByIdAsync(int id)
         {
-            var httpResponse = await _httpClient.GetAsync($"Game/id={id}");
+            var httpResponse = await _httpClient.GetAsync($"Games/{id}");
 
             var response = await httpResponse.Content.ReadFromJsonAsync<ResponseData<Game>>();
             Success = response.Success;
@@ -64,7 +64,7 @@ namespace Web_153502_Tolstoi.BlazorWasm.Services
                 _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("bearer", token.Value);
             }
 
-            var httpResponse = await _httpClient.GetAsync($"Game/Category={categoryNormalizedName}/page={pageNo}/{apiPageSize}");
+            var httpResponse = await _httpClient.GetAsync($"Games/{categoryNormalizedName}/page{pageNo}/{apiPageSize}");
             var response = await httpResponse.Content.ReadFromJsonAsync<ResponseData<ListModel<Game>>>();
             Success = response.Success;
             ErrorMessage = response.ErrorMessage;

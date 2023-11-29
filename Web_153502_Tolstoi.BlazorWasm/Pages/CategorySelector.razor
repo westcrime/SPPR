@@ -7,7 +7,7 @@
 <!-- Выбор жанра -->
 @if (dataService.Categorys != null)
 {
-	<div class="dropdown">
+	 <div class="dropdown">
 		<a class="btn btn-secondary dropdown-toggle" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
 			@SelectedCategory
 		</a>
@@ -19,7 +19,7 @@
 				<li><a class="dropdown-item" href="/games/@category?.NormalizedName">@category?.Name</a></li>
 			}
 		</ul>
-	</div>
+	</div> 
 }
 
 

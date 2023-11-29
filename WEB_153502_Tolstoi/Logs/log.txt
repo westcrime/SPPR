@@ -79,3 +79,5 @@ Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: Cannot implicitly convert
 2023-11-26 17:16:47.993 +03:00 [INF] HTTP POST /Identity/Logout responded 302 in 1041.0433 ms
 2023-11-26 17:41:42.696 +03:00 [INF] HTTP GET /Identity/Login responded 302 in 3536.0742 ms
 2023-11-26 17:41:48.169 +03:00 [INF] HTTP GET /signin-oidc responded 302 in 1536.3911 ms
+2023-11-29 10:52:04.242 +03:00 [INF] HTTP GET /Admin responded 302 in 954.5582 ms
+2023-11-29 10:52:05.583 +03:00 [INF] HTTP GET /signin-oidc responded 302 in 931.8058 ms

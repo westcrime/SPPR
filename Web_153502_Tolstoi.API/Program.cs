@@ -5,6 +5,7 @@ using Web_153502_Tolstoi.API.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
+
 // Add services to the container.
 
 builder.Services.AddControllers();
@@ -47,6 +48,12 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseStaticFiles();
+
+
+app.UseCors(opt =>
+opt.AllowAnyHeader()
+.AllowAnyOrigin()
+.AllowAnyMethod());
 
 app.UseHttpsRedirection();
 

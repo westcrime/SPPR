@@ -7,15 +7,16 @@
 @attribute [Authorize]
 @inject IDataService dataService;
 
-<CategorySelector SelectedCategory="@SelectedName" />
+<CategorySelector SelectedCategory="@SelectedCategory" />
 <GameCatalog GameSelected="@FindGame"/>
 <Pagination Category="@category" />
-<GameDetails SelectedBook="@SelectedGame"/>
+<GameDetails SelectedGame="@SelectedGame"/>
 
 @code {
 	[Parameter]
 	public string? category { get; set; }
-	public string? SelectedName { get; set; }
+	[Parameter]
+	public string? SelectedCategory { get; set; }
 	[Parameter]
 	public Game? SelectedGame { get; set; }
 
@@ -36,7 +37,7 @@
 	protected override async Task OnParametersSetAsync()
 	{
 
-		SelectedName = ConvertDashToCamelCase(category!);
+		SelectedCategory = ConvertDashToCamelCase(category!);
 		await dataService.GetProductListAsync(category);
 	}
 

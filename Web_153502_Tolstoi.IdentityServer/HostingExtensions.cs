@@ -67,6 +67,11 @@ namespace Web_153502_Tolstoi.IdentityServer
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseCors(opt=>
+            opt.AllowAnyHeader()
+            .AllowAnyOrigin()
+            .AllowAnyMethod());
+
             app.UseStaticFiles();
             app.UseRouting();
             app.UseIdentityServer();
